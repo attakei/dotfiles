@@ -1,0 +1,6 @@
+let dotfiles_dir = `pwd`
+let config_dir = $"($env.HOME)/.config"
+
+# TODO: Program to link from any config sub-folders
+ln -sf $"($dotfiles_dir)/config/mise" $"($config_dir)/mise"
+ln -sf $"($dotfiles_dir)/config/wezterm" $"($config_dir)/wezterm"
