@@ -1,0 +1,6 @@
+[tools]
+uv = "latest"
+task = "latest"
+pnpm = "latest"
+node = "20"
+rust = "latest"
