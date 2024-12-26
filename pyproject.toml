@@ -1,0 +1,10 @@
+[project]
+name = "dotfiles"
+version = "0"
+description = "Docment management for dotfiles"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "esbonio>=0.16.5",
+    "sphinx>=8.1.3",
+]
