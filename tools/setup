@@ -2,6 +2,6 @@ let dotfiles_dir = `pwd`
 let config_dir = $"($env.HOME)/.config"
 
 # TODO: Program to link from any config sub-folders
-ln -sf $"($dotfiles_dir)/config/wezterm" $"($config_dir)/"
-ln -sf $"($dotfiles_dir)/config/nushell" $"($config_dir)/"
-ln -sf $"($dotfiles_dir)/config/mise" $"($config_dir)/"
+ln -sf $"($dotfiles_dir)/root/.config/wezterm" $"($config_dir)/"
+ln -sf $"($dotfiles_dir)/root/.config/nushell" $"($config_dir)/"
+ln -sf $"($dotfiles_dir)/root/.config/mise" $"($config_dir)/"
