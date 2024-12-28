@@ -1,4 +1,5 @@
 use ~/.cache/starship/init.nu
+use ./commands.nu *
 
 
 # keybindings
@@ -10,7 +11,7 @@ $env.config.keybindings = $env.config.keybindings | append [
     mode: emacs
     event: {
       send: executehostcommand,
-      cmd: "cd (ghq list --full-path | fzf | decode utf-8 | str trim)"
+      cmd: "ghq",
     }
   }
 ]
