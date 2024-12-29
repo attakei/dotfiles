@@ -5,3 +5,12 @@ export def --env --wrapped ghq [...rest] {
     ^ghq ...$rest
   }
 }
+
+export def --env zellijp [] {
+  let name = $env.PWD | path basename
+  if ($name in (zellij list-sessions -n -s| lines)) {
+    zellij attach $name
+  } else {
+    zellij -s $name
+  }
+}
