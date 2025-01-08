@@ -1,4 +1,4 @@
-use ~/.cache/starship/init.nu
+use ./commands.nu *
 
 # For Windows
 $env.config.shell_integration = {
@@ -10,3 +10,17 @@ $env.config.shell_integration = {
     osc633: false
     reset_application_mode: false
 }
+
+# keybindings
+$env.config.keybindings = $env.config.keybindings | append [
+  {
+    name: fuzzy_ghq
+    modifier: control
+    keycode: char_g
+    mode: emacs
+    event: {
+      send: executehostcommand,
+      cmd: "ghq",
+    }
+  }
+]
