@@ -34,7 +34,7 @@ for $link in $links {
     }
     mklink /D $target_resolved $source_resolved
   } else {
-    ln -sf $source_resolved $target_resolved
+    ln -snf $source_resolved $target_resolved
   }
 }
 
