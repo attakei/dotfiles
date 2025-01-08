@@ -27,4 +27,4 @@ $env.config.keybindings = $env.config.keybindings | append [
 
 # Load local settings
 const _local_nu = './local.nu' | path expand
-source (if ($_local_nu | path exists) { $_local_nu }  else { './local_fallback.nu' })
+source-env (if ($_local_nu | path exists) { $_local_nu }  else { './local_fallback.nu' })
