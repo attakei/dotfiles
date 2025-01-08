@@ -1,3 +1,4 @@
+use ~/.cache/starship/init.nu
 use ./commands.nu *
 
 # For Windows
