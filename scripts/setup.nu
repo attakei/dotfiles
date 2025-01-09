@@ -30,7 +30,7 @@ for $link in $links {
   let target_resolved = inject_env $target
   if ( uname | get kernel-name | str contains 'Windows_NT') {
     if ( $target_resolved | path exists ) {
-      rm $target_resolved
+      rm -rf $target_resolved
     }
     mklink /D $target_resolved $source_resolved
   } else {
