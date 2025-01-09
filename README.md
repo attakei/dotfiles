@@ -13,7 +13,7 @@
 これらの本体は、OSと密結合したパッケージマネージャーで管理すること（Pacman, winget など）。
 
 * ターミナルエミュレーターに [WezTerm](https://wezfurlong.org/wezterm/) を使用する。
-* そのうえで動作するシェルに [Nushell](https://www.nushell.sh/) を使用する。
+* そのうえで動作するシェルに [Nushell](https://www.nushell.sh/) v0.101.0以上 を使用する。
 * ツール系のパッケージ管理に [mise](https://mise.jdx.dev/) を使用する。
 * mise経由で原則として下記のプログラミング言語、ツールチェインを標準セットアップする。
   * Python
