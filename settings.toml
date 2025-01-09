@@ -1,0 +1,20 @@
+[[links]]
+source = 'root/.config/mise'
+
+[links.targets]
+Windows_NT = '{{USERPROFILE}}\.config\mise'
+Linux = '{{HOME}}/.config/mise'
+
+[[links]]
+source = 'root/.config/nushell'
+
+[links.targets]
+Windows_NT = '{{APPDATA}}\nushell'
+Linux = '{{HOME}}/.config/nushell'
+
+[[links]]
+source = 'root/.config/wezterm'
+
+[links.targets]
+Windows_NT = '{{USERPROFILE}}\.config\wezterm'
+Linux = '{{HOME}}/.config/wezterm'

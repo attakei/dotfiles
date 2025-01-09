@@ -13,11 +13,19 @@
 これらの本体は、OSと密結合したパッケージマネージャーで管理すること（Pacman, winget など）。
 
 * ターミナルエミュレーターに [WezTerm](https://wezfurlong.org/wezterm/) を使用する。
-* そのうえで動作するシェルに [Nushell](https://www.nushell.sh/) を使用する。
+* そのうえで動作するシェルに [Nushell](https://www.nushell.sh/) v0.101.0以上 を使用する。
 * ツール系のパッケージ管理に [mise](https://mise.jdx.dev/) を使用する。
 * mise経由で原則として下記のプログラミング言語、ツールチェインを標準セットアップする。
-  * Rust
   * Python
+
+### OS固有項目
+
+* Windowsの場合は「開発者モード」を有効にしてること。
+
+### 環境変数関連
+
+- `MISE_ENV`: [mise](./root/.config/mise)のファイル一覧を参照し、該当する環境をカンマ区切りで設定すること。
+  - 例: Linuxの通常環境は、`MISE_ENV=linux`
 
 ## CLIツール関連
 
