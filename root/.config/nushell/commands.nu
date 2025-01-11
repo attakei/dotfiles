@@ -14,3 +14,9 @@ export def --env zellijp [] {
     zellij -s $name
   }
 }
+
+export def nvimp [...rest] {
+  if ( $env.PWD | path join 'uv.lock' | path exists) {
+    uv run nvim
+  }
+}
