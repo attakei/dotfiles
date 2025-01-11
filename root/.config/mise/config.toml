@@ -2,7 +2,7 @@
 uv = "latest"
 task = "latest"
 pnpm = "latest"
-node = "20"
+node = "22"
 starship = "latest"
 ghq = "latest"
 lazygit = "latest"
