@@ -1,5 +1,8 @@
 local wezterm = require("wezterm")
-local config = {}
+local config = wezterm.config_builder()
+
+-- System
+config.automatically_reload_config = true
 
 --  Window
 config.window_background_opacity = 0.8
