@@ -20,3 +20,7 @@ export def nvimp [...rest] {
     uv run nvim
   }
 }
+
+export def uvm [...rest] {
+  uv run python -m ...$rest
+}
