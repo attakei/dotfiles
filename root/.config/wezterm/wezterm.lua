@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 
 -- System
 config.automatically_reload_config = true
+config.allow_win32_input_mode = false
 
 --  Window
 config.window_background_opacity = 0.8
