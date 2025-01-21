@@ -21,6 +21,6 @@ export def nvimp [...rest] {
   }
 }
 
-export def uvm [...rest] {
+export def --wrapped uvm [...rest] {
   uv run python -m ...$rest
 }
