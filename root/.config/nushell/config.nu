@@ -1,4 +1,6 @@
 use ~/.cache/starship/init.nu
+use vendor/nu_scripts/custom-completions/git/git-completions.nu *
+use vendor/nu_scripts/aliases/git/git-aliases.nu *
 use ./commands.nu *
 
 # For Windows
