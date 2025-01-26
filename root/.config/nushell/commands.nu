@@ -20,7 +20,3 @@ export def --wrapped nvimp [...rest] {
     uv run nvim
   }
 }
-
-export def --wrapped uvm [...rest] {
-  uv run python -m ...$rest
-}
