@@ -1,2 +1,3 @@
-check_update
 wezterm-local.lua
+check_update
+recent-commands.json
