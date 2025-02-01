@@ -16,4 +16,15 @@ config.font = wezterm.font("HackGen Console NF")
 --  Init
 config.default_prog = { "nu" }
 
+-- Adjust for localmachine
+local _f = io.open("./wezterm-local.lua", "r")
+if _f ~= nil then
+    io.close(_f)
+else
+    local localConfig = require("./wezterm-local")
+    for k, v in pairs(localConfig) do
+        config[k] = v
+    end
+end
+
 return config
