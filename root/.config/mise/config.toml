@@ -9,3 +9,6 @@ lazygit = "latest"
 lefthook = "latest"
 fzf = "latest"
 neovim = "latest"
+
+[settings]
+idiomatic_version_file_disable_tools = ["python"]
