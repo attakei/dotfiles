@@ -17,6 +17,6 @@ export def --env zellijp [] {
 
 export def --wrapped nvimp [...rest] {
   if ( $env.PWD | path join 'uv.lock' | path exists) {
-    uv run nvim
+    uv run nvim ...$rest
   }
 }
