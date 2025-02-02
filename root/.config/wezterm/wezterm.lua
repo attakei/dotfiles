@@ -18,7 +18,7 @@ config.initial_cols = 160
 --  Design
 config.font = wezterm.font("HackGen Console NF")
 
---  Init
+--  Start up command
 config.default_prog = { "nu" }
 
 -- Adjust for local-machine
