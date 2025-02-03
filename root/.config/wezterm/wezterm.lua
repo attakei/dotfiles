@@ -22,7 +22,7 @@ config.font = wezterm.font("HackGen Console NF")
 config.default_prog = { "nu" }
 
 -- Adjust for local-machine
-if file_exists("./wezterm-local.lua") then
+if file_exists(os.getenv("WEZTERM_CONFIG_DIR") .. "/wezterm-local.lua") then
     local localConfig = require("./wezterm-local")
     for k, v in pairs(localConfig) do
         config[k] = v
