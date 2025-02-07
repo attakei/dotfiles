@@ -1,13 +1,25 @@
+local package = require("package")
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local function localconf_exists()
-    local conf_dir = os.getenv("WEZTERM_CONFIG_DIR")
-    if conf_dir ~= nil then
-    else
-        conf_dir = os.getenv("HOME") .. "/.config/wezterm"
+local function sep()
+    if package.config:sub(1,1) == '\\' then
+        return '\\'
+    else 
+        return '/'
     end
-    local path = conf_dir .. "/wezterm-local.lua"
+end
+
+local function localconf_exists()
+    local conf_dir
+    if os.getenv("WEZTERM_CONFIG_DIR") then
+        conf_dir = os.getenv("WEZTERM_CONFIG_DIR")
+    elseif os.getenv("HOME") then  -- For Linux
+        conf_dir = os.getenv("HOME") .. sep() .. ".config" .. sep() .. "wezterm"
+    elseif os.getenv("USERPROFILE") then  -- For Windows
+        conf_dir = os.getenv("USERPROFILE") .. sep() .. ".config" .. sep() .. "wezterm"
+    end
+    local path = conf_dir .. sep() .. "wezterm-local.lua"
     local f = io.open(path, "r")
     return f ~= nil and io.close(f)
 end
