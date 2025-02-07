@@ -1,8 +1,14 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local function file_exists(name)
-    local f = io.open(name, "r")
+local function localconf_exists()
+    local conf_dir = os.getenv("WEZTERM_CONFIG_DIR")
+    if conf_dir ~= nil then
+    else
+        conf_dir = os.getenv("HOME") .. "/.config/wezterm"
+    end
+    local path = conf_dir .. "/wezterm-local.lua"
+    local f = io.open(path, "r")
     return f ~= nil and io.close(f)
 end
 
@@ -22,7 +28,7 @@ config.font = wezterm.font("HackGen Console NF")
 config.default_prog = { "nu" }
 
 -- Adjust for local-machine
-if file_exists(os.getenv("WEZTERM_CONFIG_DIR") .. "/wezterm-local.lua") then
+if localconf_exists() then
     local localConfig = require("./wezterm-local")
     for k, v in pairs(localConfig) do
         config[k] = v
