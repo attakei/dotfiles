@@ -18,3 +18,10 @@ source = 'root/.config/wezterm'
 [links.targets]
 Windows_NT = '{{USERPROFILE}}\.config\wezterm'
 Linux = '{{HOME}}/.config/wezterm'
+
+[[links]]
+source = 'root/.config/alacritty'
+
+[links.targets]
+Windows_NT = '{{APPDATA}}\alacritty'
+Linux = '{{HOME}}/.config/alacritty'
