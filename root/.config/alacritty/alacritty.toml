@@ -11,3 +11,9 @@ size = 12
 
 [terminal]
 shell = "nu"
+
+[keyboard]
+bindings = [
+  {key="N", mods = "Control | Shift", action = "CreateNewWindow"},
+  # {key="T", mods = "Control | Shift", action = "CreateNewTab"},
+]
