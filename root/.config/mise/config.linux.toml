@@ -1,3 +1,4 @@
 [tools]
 rust = "latest"
 zig = "latest"
+zellij = "latest"
