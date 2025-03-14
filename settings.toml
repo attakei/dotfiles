@@ -25,3 +25,10 @@ source = 'root/.config/uv'
 [links.targets]
 Windows_NT = '{{USERPROFILE}}\.config\uv'
 Linux = '{{HOME}}/.config/uv'
+
+[[links]]
+source = 'root/.config/alacritty'
+
+[links.targets]
+Windows_NT = '{{APPDATA}}\alacritty'
+Linux = '{{HOME}}/.config/alacritty'

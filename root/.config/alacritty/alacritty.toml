@@ -1,0 +1,26 @@
+[general]
+import = [
+    "alacritty.local.toml",
+]
+live_config_reload = true
+
+[window]
+dimensions = { columns = 140, lines = 40}
+opacity = 0.8
+
+[font]
+normal = {family = "HackGen Console NF"}
+size = 12
+
+# Set into alacritty.local.toml
+# [terminal]
+# shell = "wsl"
+
+[keyboard]
+bindings = [
+  {key="N", mods = "Control | Shift", action = "CreateNewWindow"},
+  # {key="T", mods = "Control | Shift", action = "CreateNewTab"},
+]
+
+[debug]
+log_level = "Info"
