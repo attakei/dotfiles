@@ -1,0 +1,7 @@
+# This is template of machine-local config for Alacritty.
+
+[terminal]
+# Default
+# shell = "nu"
+# For run WSL on Windows (that machine is not used windows local)
+shell = "wsl"
