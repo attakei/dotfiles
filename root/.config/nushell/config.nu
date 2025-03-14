@@ -20,7 +20,7 @@ $env.config.keybindings = $env.config.keybindings | append [
   {
     name: fuzzy_ghq
     modifier: control
-    keycode: char_g
+    keycode: char_w
     mode: emacs
     event: {
       send: executehostcommand,
