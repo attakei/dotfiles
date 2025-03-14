@@ -20,6 +20,13 @@ Windows_NT = '{{USERPROFILE}}\.config\wezterm'
 Linux = '{{HOME}}/.config/wezterm'
 
 [[links]]
+source = 'root/.config/uv'
+
+[links.targets]
+Windows_NT = '{{USERPROFILE}}\.config\uv'
+Linux = '{{HOME}}/.config/uv'
+
+[[links]]
 source = 'root/.config/alacritty'
 
 [links.targets]
