@@ -37,5 +37,5 @@ Linux = '{{HOME}}/.config/alacritty'
 source = 'root/biome.jsonc'
 
 [links.targets]
-# TODO: Windows path settings
+Windows_NT = '{{USERPROFILE}}\biome.jsonc'
 Linux = '{{HOME}}/biome.jsonc'

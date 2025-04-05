@@ -32,7 +32,11 @@ for $link in $links {
     if ( $target_resolved | path exists ) {
       rm -rf $target_resolved
     }
-    mklink /D $target_resolved $source_resolved
+    if ((echo $source_resolved | path type) == 'file') {
+      mklink $target_resolved $source_resolved
+    } else {
+      mklink /D $target_resolved $source_resolved
+    }
   } else {
     ln -snf $source_resolved $target_resolved
   }
