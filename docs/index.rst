@@ -22,4 +22,4 @@ Contents
    :maxdepth: 1
 
    setup/index
-
+   extra/index
