@@ -31,6 +31,13 @@ $env.config.keybindings = $env.config.keybindings | append [
 
 # Load local settings
 const _config_dir = path self | path join .. | path expand
+const _fallback_nu = $_config_dir | path join _fallback.nu
+
+# mise
+const _mise_nu = $_config_dir | path join mise.nu
+use (if ($_local_nu | path exists) { $_local_nu }  else { $_fallback_nu })
+
+# misc
 const _local_nu = $_config_dir | path join local.nu
-const _fallback_nu = $_config_dir | path join local_fallback.nu
-source-env (if ($_local_nu | path exists) { $_local_nu }  else { $_fallback_nu })
+const _local_fallback_nu = $_config_dir | path join local_fallback.nu
+source-env (if ($_local_nu | path exists) { $_local_nu }  else { $_local_fallback_nu })
