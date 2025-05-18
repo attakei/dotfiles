@@ -41,7 +41,7 @@ Windows_NT = '{{USERPROFILE}}\biome.jsonc'
 Linux = '{{HOME}}/biome.jsonc'
 
 [[links]]
-source = 'root/.harper-dict.xt'
+source = 'root/.harper-dict.txt'
 
 [links.targets]
 Windows_NT = '{{USERPROFILE}}\.harper-dict.txt'
