@@ -39,3 +39,10 @@ source = 'root/biome.jsonc'
 [links.targets]
 Windows_NT = '{{USERPROFILE}}\biome.jsonc'
 Linux = '{{HOME}}/biome.jsonc'
+
+[[links]]
+source = 'root/.harper-dict.xt'
+
+[links.targets]
+Windows_NT = '{{USERPROFILE}}\.harper-dict.txt'
+Linux = '{{HOME}}/.harper-dict.txt'
