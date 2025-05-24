@@ -29,7 +29,7 @@ config.automatically_reload_config = true
 config.allow_win32_input_mode = false
 
 --  Window
-config.window_background_opacity = 0.8
+-- config.window_background_opacity = 0.8
 config.initial_rows = 40
 config.initial_cols = 160
 
