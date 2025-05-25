@@ -6,7 +6,7 @@
 let PD = if (uname | get kernel-name | str contains 'Windows_NT') { '\' } else {'/'}
 let HOME = if (uname | get kernel-name | str contains 'Windows_NT') { $env.USERPROFILE } else { $env.HOME }
 # From settings
-let links = open settings.toml | get links
+let links = open settings.yaml | get links
 
 # Pseudo templating to inject environment variables into string.
 def inject_env [src: string] {

@@ -1,0 +1,52 @@
+---
+# ------
+# Symlink targets of files in `./root`.a
+# ------
+links:
+  # mise
+  - source: 'root/.config/mise'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\.config\mise'
+      Linux: '{{HOME}}/.config/mise'
+  # nushell
+  - source: 'root/.config/nushell'
+    targets:
+      Windows_NT: '{{APPDATA}}\nushell'
+      Linux: '{{HOME}}/.config/nushell'
+  # WezTerm
+  - source: 'root/.config/wezterm'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\.config\wezterm'
+      Linux: '{{HOME}}/.config/wezterm'
+  # uv
+  - source: 'root/.config/uv'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\.config\uv'
+      Linux: '{{HOME}}/.config/uv'
+  # alacritty
+  - source: 'root/.config/alacritty'
+    targets:
+      Windows_NT: '{{APPDATA}}\alacritty'
+      Linux: '{{HOME}}/.config/alacritty'
+  # Biome
+  - source: 'root/biome.jsonc'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\biome.jsonc'
+      Linux: '{{HOME}}/biome.jsonc'
+  # harper-ls
+  - source: 'root/.harper-dict.txt'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\.harper-dict.txt'
+      Linux: '{{HOME}}/.harper-dict.txt'
+  # Starship
+  - source: 'root/.config/starship.toml'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\.config\starship.toml'
+      Linux: '{{HOME}}/.config/starship.toml'
+  # Zsh
+  - source: 'root/.zshenv'
+    targets:
+      Linux: '{{HOME}}/.zshenv'
+  - source: 'root/.zshrc'
+    targets:
+      Linux: '{{HOME}}/.zshrc'
