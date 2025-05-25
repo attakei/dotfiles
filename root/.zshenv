@@ -15,6 +15,13 @@ path=(
   "/usr/games"
   "/snap/bin"
 )
+path=(
+  ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
+  $HOME/.nimble/bin
+  $HOME/.cargo/bin
+  $HOME/.local/share/mise/bin
+  $path
+)
 
 # Docker-rootless
 if [ "$XDG_RUNTIME_DIR" = "" ] ; then

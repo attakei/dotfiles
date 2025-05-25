@@ -50,3 +50,8 @@ links:
   - source: 'root/.zshrc'
     targets:
       Linux: '{{HOME}}/.zshrc'
+  # aqua
+  - source: 'root/aqua.yaml'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\aqua.yaml'
+      Linux: '{{HOME}}/aqua.yaml'
