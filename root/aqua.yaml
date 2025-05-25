@@ -13,3 +13,6 @@ registries:
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.62.0
+- name: astral-sh/uv@0.7.8
+- name: volta-cli/volta@v2.0.2
+- name: denoland/deno@v2.3.3
