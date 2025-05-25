@@ -53,3 +53,15 @@ source = 'root/.config/starship.toml'
 [links.targets]
 Windows_NT = '{{USERPROFILE}}\.config\starship.toml'
 Linux = '{{HOME}}/.config/starship.toml'
+
+[[links]]
+source = 'root/.zshenv'
+
+[links.targets]
+Linux = '{{HOME}}/.zshenv'
+
+[[links]]
+source = 'root/.zshrc'
+
+[links.targets]
+Linux = '{{HOME}}/.zshrc'
