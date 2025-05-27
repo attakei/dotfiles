@@ -28,3 +28,7 @@ $env.config.keybindings = $env.config.keybindings | append [
     }
   }
 ]
+
+# Env
+let HOME = if (uname | get kernel-name | str contains 'Windows_NT') { $env.USERPROFILE } else { $env.HOME }
+$env.AQUA_POLICY_CONFIG = ($HOME + '/aqua-policy.yaml:') + ($env.AQUA_POLICY_CONFIG? | "")

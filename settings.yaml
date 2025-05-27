@@ -55,3 +55,7 @@ links:
     targets:
       Windows_NT: '{{USERPROFILE}}\aqua.yaml'
       Linux: '{{HOME}}/aqua.yaml'
+  - source: 'root/aqua-policy.yaml'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\aqua.yaml'
+      Linux: '{{HOME}}/aqua-policy.yaml'
