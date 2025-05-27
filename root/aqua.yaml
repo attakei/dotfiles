@@ -10,6 +10,12 @@
 registries:
 - type: standard
   ref: v4.371.1 # renovate: depName=aquaproj/aqua-registry
+- name: attakei-age
+  type: github_content
+  repo_owner: attakei
+  repo_name: age
+  ref: v0.10.2
+  path: registry.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.62.0
@@ -18,3 +24,5 @@ packages:
 - name: denoland/deno@v2.3.3
 - name: jesseduffield/lazygit@v0.51.1
 - name: zellij-org/zellij@v0.42.2
+- name: attakei/age@v0.10.2
+  registry: attakei-age
