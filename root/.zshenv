@@ -16,12 +16,18 @@ path=(
   "/snap/bin"
 )
 path=(
-  ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
   $HOME/.nimble/bin
   $HOME/.cargo/bin
   $HOME/.local/share/mise/bin
   $path
 )
+
+# aqua
+path=(
+  ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
+  $path
+)
+export AQUA_POLICY_CONFIG=$HOME/aqua-policy.yaml
 
 # Docker-rootless
 if [ "$XDG_RUNTIME_DIR" = "" ] ; then
