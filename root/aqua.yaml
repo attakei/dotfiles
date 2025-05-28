@@ -26,3 +26,4 @@ packages:
 - name: zellij-org/zellij@v0.42.2
 - name: attakei/age@v0.10.2
   registry: attakei-age
+- name: rossmacarthur/sheldon@0.8.2
