@@ -27,3 +27,4 @@ packages:
 - name: attakei/age@v0.10.2
   registry: attakei-age
 - name: rossmacarthur/sheldon@0.8.2
+- name: starship/starship@v1.23.0

@@ -2,6 +2,9 @@
 # - Zsh interactive shell settings for me (cross-env)
 # --------------------------------------
 
+# Configure with sheldon
+eval "$(sheldon source)"
+
 setopt share_history
 
 # Custom settings for shell
@@ -11,6 +14,9 @@ setopt share_history
 # path=(
 #   $path
 # )
+
+# Use starship
+eval "$(starship init zsh)"
 
 # Load machine-local .zshenv
 if [ -e "$HOME/.zshrc.local" ] ; then
