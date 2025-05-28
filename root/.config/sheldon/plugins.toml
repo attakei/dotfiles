@@ -20,3 +20,12 @@ shell = "zsh"
 # github = "chriskempson/base16-shell"
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
+
+[plugins.autosuggenstions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
