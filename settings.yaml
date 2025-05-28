@@ -50,6 +50,9 @@ links:
   - source: 'root/.zshrc'
     targets:
       Linux: '{{HOME}}/.zshrc'
+  - source: 'root/.config/sheldon'
+    targets:
+      Linux: '{{HOME}}/.config/sheldon'
   # aqua
   - source: 'root/aqua.yaml'
     targets:

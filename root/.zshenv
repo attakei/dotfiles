@@ -27,6 +27,7 @@ path=(
   ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
   $path
 )
+export AQUA_GLOBAL_CONFIG=$HOME/aqua.yaml
 export AQUA_POLICY_CONFIG=$HOME/aqua-policy.yaml
 
 # Docker-rootless
