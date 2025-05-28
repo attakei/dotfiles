@@ -18,3 +18,5 @@ shell = "zsh"
 #
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
+[plugins.zeno]
+github = "yuki-yano/zeno.zsh"

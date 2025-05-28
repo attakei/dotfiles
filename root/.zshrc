@@ -19,6 +19,17 @@ bindkey '\CE' end-of-line
 #   $path
 # )
 
+## Config for zeno.zsh
+if [[ -n $ZENO_LOADED ]]; then
+  # ここに任意のZLEの記述を行う
+  bindkey ' '  zeno-auto-snippet
+  bindkey '^m' zeno-auto-snippet-and-accept-line
+  bindkey '^i' zeno-completion
+  bindkey '^w' zeno-ghq-cd
+  bindkey '^r' zeno-history-selection
+  bindkey '^x' zeno-insert-snippet
+fi
+
 # Use starship
 eval "$(starship init zsh)"
 
