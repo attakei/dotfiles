@@ -28,3 +28,4 @@ packages:
   registry: attakei-age
 - name: rossmacarthur/sheldon@0.8.2
 - name: starship/starship@v1.23.0
+- name: JanDeDobbeleer/oh-my-posh@v25.23.3

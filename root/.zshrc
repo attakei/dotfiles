@@ -31,7 +31,7 @@ if [[ -n $ZENO_LOADED ]]; then
 fi
 
 # Use starship
-eval "$(starship init zsh)"
+eval "$(oh-my-posh init zsh)"
 
 # Load machine-local .zshenv
 if [ -e "$HOME/.zshrc.local" ] ; then
