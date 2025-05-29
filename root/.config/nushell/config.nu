@@ -29,6 +29,14 @@ $env.config.keybindings = $env.config.keybindings | append [
   }
 ]
 
-# Env
-let HOME = if (uname | get kernel-name | str contains 'Windows_NT') { $env.USERPROFILE } else { $env.HOME }
-$env.AQUA_POLICY_CONFIG = ($HOME + '/aqua-policy.yaml:') + ($env.AQUA_POLICY_CONFIG? | "")
+# aqua
+if (uname | get kernel-name | str contains 'Windows_NT') { 
+  $env.AQUA_POLICY_CONFIG = ($env.USERPROFILE + '\aqua-policy.yaml;') + ($env.AQUA_POLICY_CONFIG? | "")
+  let aqua_bin = $env.USERPROFILE + '\AppData\Local\aquaproj-aqua\bin'
+  if ($aqua_bin not-in $env.PATH) {
+    $env.PATH = $env.PATH | prepend $aqua_bin
+  }
+} else {
+  $env.AQUA_POLICY_CONFIG = ($env.HOME + '/aqua-policy.yaml:') + ($env.AQUA_POLICY_CONFIG? | "")
+  # TODO: Path settings for Linux
+}
