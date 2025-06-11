@@ -45,6 +45,13 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      harper_ls = {
+        settings = {
+          ["harper-ls"] = {
+            userDictPath = "~/.harper-dict.txt",
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
