@@ -6,15 +6,6 @@ export def --env --wrapped ghq [...rest] {
   }
 }
 
-export def --env zellijp [] {
-  let name = $env.PWD | path basename
-  if ($name in (zellij list-sessions -n -s| lines)) {
-    zellij attach $name
-  } else {
-    zellij -s $name
-  }
-}
-
 export def --wrapped nvimp [...rest] {
   if ( $env.PWD | path join 'uv.lock' | path exists) {
     uv run nvim ...$rest
