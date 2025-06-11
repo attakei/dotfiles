@@ -30,3 +30,4 @@ packages:
 - name: starship/starship@v1.23.0
 - name: JanDeDobbeleer/oh-my-posh@v25.23.3
 - name: cli/cli@v2.73.0
+- name: tree-sitter/tree-sitter@v0.25.6
