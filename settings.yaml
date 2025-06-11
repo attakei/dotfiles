@@ -62,3 +62,8 @@ links:
     targets:
       Windows_NT: '{{USERPROFILE}}\aqua-policy.yaml'
       Linux: '{{HOME}}/aqua-policy.yaml'
+  # NeoVim
+  - source: 'root/.config/nvim'
+    targets:
+      # TODO: Configure for Windows
+      Linux: '{{HOME}}/.config/nvim'
