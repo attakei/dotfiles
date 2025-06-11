@@ -33,6 +33,20 @@ fi
 # Use starship
 eval "$(oh-my-posh init zsh)"
 
+
+# NeoVim using Python virtualenv
+function nvimp () {
+  if [ -e "poetry.lock" ] ; then
+    poetry run nvim $@
+  elif [ -e "Pipfile.lock" ] ; then
+    pipenv run nvim $@
+  elif [ -e "uv.lock" ] ; then
+    uv run nvim $@
+  else
+    nvim $@
+  fi
+}
+
 # Load machine-local .zshenv
 if [ -e "$HOME/.zshrc.local" ] ; then
     source "$HOME/.zshrc.local"
