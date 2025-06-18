@@ -31,7 +31,10 @@ if [[ -n $ZENO_LOADED ]]; then
 fi
 
 # Use starship
-eval "$(oh-my-posh init zsh)"
+if [[ "$(tty)" =~ "/dev/tty[0-9]+" ]] ; then
+else
+  eval "$(oh-my-posh init zsh)"
+fi
 
 
 # NeoVim using Python virtualenv
