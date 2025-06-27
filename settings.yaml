@@ -53,15 +53,6 @@ links:
   - source: 'root/.config/sheldon'
     targets:
       Linux: '{{HOME}}/.config/sheldon'
-  # aqua
-  - source: 'root/aqua.yaml'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\aqua.yaml'
-      Linux: '{{HOME}}/aqua.yaml'
-  - source: 'root/aqua-policy.yaml'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\aqua-policy.yaml'
-      Linux: '{{HOME}}/aqua-policy.yaml'
   # NeoVim
   - source: 'root/.config/nvim'
     targets:
