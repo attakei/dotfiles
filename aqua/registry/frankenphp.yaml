@@ -1,0 +1,74 @@
+packages:
+  - type: github_release
+    repo_owner: php
+    repo_name: frankenphp
+    description: The modern PHP app server
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v1.0.0-rc.4"
+        asset: frankenphp-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          darwin: mac
+        overrides:
+          - goos: linux
+            replacements:
+              amd64: x86_64
+        supported_envs:
+          - linux/amd64
+          - darwin/arm64
+      - version_constraint: Version == "v1.1.3"
+        asset: frankenphp-{{.OS}}-{{.Arch}}-debug
+        format: raw
+        replacements:
+          amd64: x86_64
+          darwin: mac
+        overrides:
+          - goos: darwin
+            asset: frankenphp-{{.OS}}-{{.Arch}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: Version == "v1.3.4"
+        asset: frankenphp-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          darwin: mac
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: Version == "v1.6.1"
+        asset: frankenphp-{{.OS}}-{{.Arch}}-debug
+        format: raw
+        replacements:
+          amd64: x86_64
+          darwin: mac
+        overrides:
+          - goos: darwin
+            asset: frankenphp-{{.OS}}-{{.Arch}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 1.0.1")
+        asset: frankenphp-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          darwin: mac
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: "true"
+        asset: frankenphp-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          darwin: mac
+        overrides:
+          - goos: linux
+            replacements:
+              arm64: aarch64
+        supported_envs:
+          - linux
+          - darwin

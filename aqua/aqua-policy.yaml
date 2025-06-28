@@ -10,6 +10,10 @@ registries:
     repo_owner: attakei
     repo_name: age
     path: registry.yaml
+  - name: frankenphp
+    type: local
+    path: ./registry/frankenphp.yaml
 packages:
   - registry: standard
   - registry: attakei-age
+  - registry: frankenphp

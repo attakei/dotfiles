@@ -16,6 +16,9 @@ registries:
   repo_name: age
   ref: v0.10.2
   path: registry.yaml
+- name: frankenphp
+  type: local
+  path: ./registry/frankenphp.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.62.0
@@ -32,3 +35,5 @@ packages:
 - name: cli/cli@v2.73.0
 - name: tree-sitter/tree-sitter@v0.25.6
 - name: nushell/nushell@0.105.1
+- name: php/frankenphp@v1.7.0
+  registry: frankenphp
