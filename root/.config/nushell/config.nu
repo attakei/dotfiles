@@ -33,7 +33,7 @@ $env.config.keybindings = $env.config.keybindings | append [
 # aqua
 # const DOTFILES_ROOT = path self | path join .. ..
 const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
-$env.AQUA_GLOBAL_CONFIG = ($DOTFILES_ROOT | path join 'aqua' 'aqua.yaml;') + ($env.AQUA_GLOBAL_CONFIG? | "")
+$env.AQUA_GLOBAL_CONFIG = ($DOTFILES_ROOT | path join 'aqua' 'aqua.yaml') + ($env.AQUA_GLOBAL_CONFIG? | "")
 $env.AQUA_POLICY_CONFIG = ($DOTFILES_ROOT | path join 'aqua' 'aqua-policy.yaml' ) + ($env.AQUA_POLICY_CONFIG? | "")
 if (uname | get kernel-name | str contains 'Windows_NT') {
   let aqua_bin = $env.USERPROFILE + '\AppData\Local\aquaproj-aqua\bin'
