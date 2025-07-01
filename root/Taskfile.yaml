@@ -1,0 +1,35 @@
+# ------
+# Global taskfile
+#
+# This manages wrapper scripts (e.g. deno cli)
+# ------
+
+version: '3'
+
+tasks:
+  claude:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - >
+        deno
+        --allow-env
+        --allow-read
+        --allow-sys
+        --allow-run
+        --allow-write
+        --allow-net
+        npm:@anthropic-ai/claude-code
+        {{.CLI_ARGS}}
+  gemini:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - >
+        deno
+        --allow-env
+        --allow-read
+        --allow-sys
+        --allow-run
+        --allow-write
+        --allow-net
+        npm:@google/gemini-cli
+        {{.CLI_ARGS}}

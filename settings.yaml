@@ -18,6 +18,11 @@ links:
     targets:
       Windows_NT: '{{USERPROFILE}}\.config\wezterm'
       Linux: '{{HOME}}/.config/wezterm'
+  # Taskfile
+  - source: 'root/Taskfile.yaml'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\Taskfile.yaml'
+      Linux: '{{HOME}}/Taskfile.yaml'
   # uv
   - source: 'root/.config/uv'
     targets:
