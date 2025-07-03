@@ -20,6 +20,17 @@ tasks:
         --allow-net
         npm:@anthropic-ai/claude-code
         {{.CLI_ARGS}}
+  ccusage:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - >
+        deno
+        --allow-env
+        --allow-sys
+        --allow-read
+        --allow-net
+        npm:ccusage
+        {{.CLI_ARGS}}
   gemini:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
