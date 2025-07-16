@@ -63,3 +63,8 @@ links:
     targets:
       # TODO: Configure for Windows
       Linux: '{{HOME}}/.config/nvim'
+  # GitTui
+  - source: 'root/.config/gitui'
+    targets:
+      # TODO: Configure for Windows
+      Linux: '{{HOME}}/.config/gitui'
