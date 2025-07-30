@@ -18,8 +18,10 @@ tasks:
         --allow-run
         --allow-write
         --allow-net
-        npm:@anthropic-ai/claude-code@1.0.51
+        npm:@anthropic-ai/claude-code@{{.VERSION}}
         {{.CLI_ARGS}}
+    vars:
+      VERSION: '{{ env "TASK_X_CLAUDE_CODE_VERSION" | default "1.0.51" }}'
   ccusage:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
