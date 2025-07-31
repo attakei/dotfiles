@@ -35,6 +35,7 @@ for $link in $links {
     if ( $target_resolved | path exists ) {
       rm -rf $target_resolved
     }
+    mkdir ($target_resolved | path join '..')
     if ((echo $source_resolved | path type) == 'file') {
       mklink $target_resolved $source_resolved
     } else {
