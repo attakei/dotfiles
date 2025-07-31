@@ -34,3 +34,4 @@ packages:
 - name: nushell/nushell@0.105.1
 - name: go-task/task@v3.44.0
 - name: gitui-org/gitui@v0.27.0
+- name: neovim/neovim@v0.11.3
