@@ -20,7 +20,6 @@ path=(
 path=(
   $HOME/.nimble/bin
   $HOME/.cargo/bin
-  $HOME/.local/share/mise/bin
   $path
 )
 
