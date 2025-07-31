@@ -3,11 +3,6 @@
 # Symlink targets of files in `./root`.a
 # ------
 links:
-  # mise
-  - source: 'root/.config/mise'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\.config\mise'
-      Linux: '{{HOME}}/.config/mise'
   # nushell
   - source: 'root/.config/nushell'
     targets:

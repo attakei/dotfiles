@@ -45,9 +45,6 @@ for $link in $links {
   }
 }
 
-# Install all global toolchaions
-mise i
-
 # Configure Starship
 if (not ($'($HOME)/.cache/starship/init.nu' | path exists)) {
   mkdir $"($HOME)/.cache/starship"
