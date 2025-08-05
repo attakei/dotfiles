@@ -9,7 +9,7 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.371.1 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.398.0 # renovate: depName=aquaproj/aqua-registry
 - name: attakei-age
   type: github_content
   repo_owner: attakei
@@ -18,20 +18,20 @@ registries:
   path: registry.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
-- name: junegunn/fzf@v0.62.0
-- name: astral-sh/uv@0.7.8
+- name: junegunn/fzf@v0.65.1
+- name: astral-sh/uv@0.8.4
 - name: volta-cli/volta@v2.0.2
-- name: denoland/deno@v2.4.2
-- name: jesseduffield/lazygit@v0.52.0
+- name: denoland/deno@v2.4.3
+- name: jesseduffield/lazygit@v0.54.0
 - name: zellij-org/zellij@v0.42.2
 - name: attakei/age@v0.10.2
   registry: attakei-age
-- name: rossmacarthur/sheldon@0.8.2
+- name: rossmacarthur/sheldon@0.8.5
 - name: starship/starship@v1.23.0
-- name: JanDeDobbeleer/oh-my-posh@v25.23.3
-- name: cli/cli@v2.73.0
-- name: tree-sitter/tree-sitter@v0.25.6
-- name: nushell/nushell@0.105.1
-- name: go-task/task@v3.44.0
+- name: JanDeDobbeleer/oh-my-posh@v26.17.3
+- name: cli/cli@v2.76.2
+- name: tree-sitter/tree-sitter@v0.25.8
+- name: nushell/nushell@0.106.1
+- name: go-task/task@v3.44.1
 - name: gitui-org/gitui@v0.27.0
 - name: neovim/neovim@v0.11.3
