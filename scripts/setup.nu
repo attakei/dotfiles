@@ -26,7 +26,7 @@ def inject_env [src: string] {
 for $link in $links {
   let source = $link.source | str replace -a '/' $PD
   let source_resolved = $'($env.PWD)($PD)($source)'
-  let target = $link.targets | get -i (uname | get kernel-name)
+  let target = $link.targets | get -o (uname | get kernel-name)
   if ($target == null) {
     continue
   }
