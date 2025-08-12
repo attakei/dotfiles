@@ -56,7 +56,7 @@ links:
   # NeoVim
   - source: 'root/.config/nvim'
     targets:
-      # TODO: Configure for Windows
+      Windows_NT: '{{USERPROFILE}}\AppData\Local\nvim'
       Linux: '{{HOME}}/.config/nvim'
   # GitTui
   - source: 'root/.config/gitui'
