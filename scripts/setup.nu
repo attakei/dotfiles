@@ -43,6 +43,7 @@ for $link in $links {
       mklink /D $target_resolved $source_resolved
     }
   } else {
+    mkdir ($target_resolved | path dirname)
     ln -snf $source_resolved $target_resolved
   }
 }
