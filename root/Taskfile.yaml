@@ -8,41 +8,17 @@ version: '3'
 
 tasks:
   claude:
+    desc: 'Run Claude Code'
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - >
-        deno
-        --allow-env
-        --allow-read
-        --allow-sys
-        --allow-run
-        --allow-write
-        --allow-net
-        npm:@anthropic-ai/claude-code@{{.VERSION}}
-        {{.CLI_ARGS}}
+      - 'bun x @anthropic-ai/claude-code@{{.VERSION}} {{.CLI_ARGS }}'
     vars:
       VERSION: '{{ env "TASK_X_CLAUDE_CODE_VERSION" | default "1.0.51" }}'
   ccusage:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - >
-        deno
-        --allow-env
-        --allow-sys
-        --allow-read
-        --allow-net
-        npm:ccusage
-        {{.CLI_ARGS}}
+      - 'bun x ccusage {{.CLI_ARGS}}'
   gemini:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - >
-        deno
-        --allow-env
-        --allow-read
-        --allow-sys
-        --allow-run
-        --allow-write
-        --allow-net
-        npm:@google/gemini-cli
-        {{.CLI_ARGS}}
+      - 'bun x @google/gemini-cli {{.CLI_ARGS}}'
