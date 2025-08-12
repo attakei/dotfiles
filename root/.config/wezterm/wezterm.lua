@@ -2,6 +2,13 @@ local package = require("package")
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+local function exec_name(name)
+    if os.getenv("USERPROFILE") then  -- For Windows
+        return name .. '.exe'
+    end
+    return name
+end
+
 local function sep()
     if package.config:sub(1,1) == '\\' then
         return '\\'
@@ -37,7 +44,7 @@ config.initial_cols = 160
 config.font = wezterm.font("HackGen Console NF")
 
 --  Start up command
-config.default_prog = { "nu" }
+config.default_prog = { exec_name('nu') }
 
 -- Adjust for local-machine
 if localconf_exists() then
