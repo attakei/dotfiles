@@ -36,3 +36,4 @@ packages:
 - name: gitui-org/gitui@v0.27.0
 - name: neovim/neovim@v0.11.3
 - name: oven-sh/bun@bun-v1.2.20
+- name: ziglang/zig@0.14.1
