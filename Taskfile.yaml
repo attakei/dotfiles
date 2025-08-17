@@ -1,0 +1,14 @@
+version: '3'
+
+includes:
+  root:
+    taskfile: ./root
+    flatten: true
+
+tasks:
+  update:
+    desc: 'Update env'
+    cmds:
+      - 'git pull'
+      - 'aqua i'
+      - 'nu scripts/setup.nu'
