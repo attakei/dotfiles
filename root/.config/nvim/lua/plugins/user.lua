@@ -1,4 +1,9 @@
 vim.opt.exrc = true
+vim.filetype.add({
+  pattern = {
+    [".*%.rst%.txt"] = "rst",
+  },
+})
 
 if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
