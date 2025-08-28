@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "tamasfe.even-better-toml",
         "thenuprojectcontributors.vscode-nushell-lang"
     ]
 }
