@@ -46,6 +46,15 @@ config.font = wezterm.font("HackGen Console NF")
 --  Start up command
 config.default_prog = { exec_name('nu') }
 
+-- Keybinds
+config.keys = {
+  {
+    key = 'Enter',
+    mods = 'ALT',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+}
+
 -- Adjust for local-machine
 if localconf_exists() then
     local localConfig = require("./wezterm-local")
