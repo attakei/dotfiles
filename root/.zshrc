@@ -50,6 +50,10 @@ function nvimp () {
   fi
 }
 
+# Completions
+. <( zellij setup --generate-completion zsh | sed -Ee 's/^(_(zellij) ).*/compdef \1\2/' )
+
+
 # Load machine-local .zshenv
 if [ -e "$HOME/.zshrc.local" ] ; then
     source "$HOME/.zshrc.local"
