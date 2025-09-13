@@ -23,6 +23,14 @@ def inject_env [src: string] {
   return $val
 };
 
+# Configure aqua (Windows only)
+if ( $OS_NAME == "Windows_NT") {
+  ^setx AQUA_GLOBAL_CONFIG ($env.PWD | path join 'aqua\aqua.yaml')
+  ^setx AQUA_POLICY_CONFIG ($env.PWD | path join 'aqua\aqua-policy.yaml')
+  $env.AQUA_GLOBAL_CONFIG = ($env.PWD | path join 'aqua\aqua.yaml')
+  $env.AQUA_POLICY_CONFIG = ($env.PWD | path join 'aqua\aqua-policy.yaml')
+}
+
 # Create symlinks
 for $link in $links {
   let source = $link.source | str replace -a '/' $PD
@@ -52,12 +60,4 @@ for $link in $links {
 if (not ($'($HOME)/.cache/starship/init.nu' | path exists)) {
   mkdir $"($HOME)/.cache/starship"
   starship init nu | save -f ~/.cache/starship/init.nu
-}
-
-# Configure aqua (Windows only)
-if ( $OS_NAME == "Windows_NT") {
-  ^setx AQUA_GLOBAL_CONFIG ($env.PWD | path join 'aqua\aqua.yaml')
-  ^setx AQUA_POLICY_CONFIG ($env.PWD | path join 'aqua\aqua-policy.yaml')
-  $env.AQUA_GLOBAL_CONFIG = ($env.PWD | path join 'aqua\aqua.yaml')
-  $env.AQUA_POLICY_CONFIG = ($env.PWD | path join 'aqua\aqua-policy.yaml')
 }
