@@ -63,3 +63,7 @@ links:
     targets:
       # TODO: Configure for Windows
       Linux: '{{HOME}}/.config/gitui'
+  # Zed
+  - source: 'root/.config/zed'
+    targets:
+      Windows_NT: '{{APPDATA}}\Zed'
