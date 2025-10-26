@@ -16,6 +16,9 @@ registries:
   repo_name: age
   ref: v0.10.2
   path: registry.yaml
+- name: attakei-gigi
+  type: local
+  path: registry-gigi.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.65.1
@@ -37,3 +40,5 @@ packages:
 - name: neovim/neovim@v0.11.3
 - name: oven-sh/bun@bun-v1.2.20
 - name: ziglang/zig@0.14.1
+- name: attakei/gigi@v0.2.1
+  registry: attakei-gigi
