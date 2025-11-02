@@ -67,3 +67,6 @@ links:
   - source: 'root/.config/zed'
     targets:
       Windows_NT: '{{APPDATA}}\Zed'
+uv-tools:
+  - 'esbonio@1.0.0'
+  - 'ty@0.0.1a25'
