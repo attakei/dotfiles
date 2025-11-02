@@ -17,6 +17,22 @@
     "light": "One Light",
     "dark": "One Dark"
   },
+  "languages": {
+    "YAML": {
+      "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": true
+          }
+        }
+      }
+    }
+  },
   "terminal": {
     "detect_venv": "off",
     "font_family": "HackGen Console NF",
