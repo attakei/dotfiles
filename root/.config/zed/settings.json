@@ -15,7 +15,7 @@
   "buffer_font_fallbacks": ["HackGen Console NF"],
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Gruvbox Light Hard",
     "dark": "One Dark"
   },
   "languages": {
