@@ -7,6 +7,14 @@
 version: '3'
 
 tasks:
+  webserver:
+    desc: 'Run static web server'
+    dir: '{{.USER_WORKING_DIR}}'
+    vars:
+      ROOT_DIR: '{{index .CLI_ARGS_LIST 0}}'
+      PORT: '{{if gt (len .CLI_ARGS_LIST) 1}}{{index .CLI_ARGS_LIST 1}}{{else}}8000{{end}}'
+    cmds:
+      - 'uv run python -m http.server -d {{.ROOT_DIR}} {{.PORT}}'
   claude:
     desc: 'Run Claude Code'
     dir: '{{.USER_WORKING_DIR}}'
