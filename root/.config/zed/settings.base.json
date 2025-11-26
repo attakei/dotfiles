@@ -1,0 +1,54 @@
+// Zed settings
+{
+  "git_panel": {
+    "sort_by_path": true
+  },
+  "relative_line_numbers": "wrapped",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_family": "HackGen Console NF",
+  "buffer_font_fallbacks": [
+    "HackGen Console NF"
+  ],
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light Hard",
+    "dark": "One Dark"
+  },
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": true,
+    "line_endings_button": true
+  },
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "ty",
+        "ruff",
+        "!basepyright"
+      ]
+    },
+    "YAML": {
+      "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": true
+          }
+        }
+      }
+    }
+  },
+  "terminal": {
+    "detect_venv": "off",
+    "font_family": "HackGen Console NF",
+    "shell": {
+      "program": "nu"
+    }
+  }
+}
