@@ -24,6 +24,9 @@
     "line_endings_button": true
   },
   "languages": {
+    "Python": {
+      "language_servers": ["ty", "ruff", "!basepyright"]
+    },
     "YAML": {
       "formatter": "language_server"
     }

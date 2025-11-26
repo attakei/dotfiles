@@ -70,3 +70,4 @@ links:
 uv-tools:
   - 'esbonio@1.0.0'
   - 'ty@0.0.1a25'
+  - 'ruff@0.14.6'
