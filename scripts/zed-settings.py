@@ -17,8 +17,8 @@ import jsonc
 
 parser = argparse.ArgumentParser(description="Zed settings sync tool.")
 parser.add_argument("--exclude", type=str, default="")
-parser.add_argument("source", type=Path, help="Source directory")
-parser.add_argument("destination", type=Path, help="Destination directory")
+parser.add_argument("source", type=Path, help="Source path")
+parser.add_argument("destination", type=Path, help="Destination path")
 
 
 def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None) -> dict:
