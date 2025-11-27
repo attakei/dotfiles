@@ -21,7 +21,9 @@ parser.add_argument("source", type=Path, help="Source path")
 parser.add_argument("destination", type=Path, help="Destination path")
 
 
-def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None) -> dict:
+def merge_dict_recursive(
+    src: dict, dst: dict, excludes: list[str] | None = None
+) -> dict:
     out = {}
     excludes = excludes or []
     src_keys = set(src.keys())
@@ -37,7 +39,7 @@ def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None
         if key in excludes:
             continue
         out[key] = src[key]
-    for key in (src_keys & dst_keys):
+    for key in src_keys & dst_keys:
         if key in excludes:
             continue
         if isinstance(dst[key], list):
