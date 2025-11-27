@@ -27,7 +27,8 @@ def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None
     src_keys = set(src.keys())
     dst_keys = set(dst.keys())
     for key in excludes:
-        out[key] = dst[key]
+        if key in dst:
+            out[key] = dst[key]
     for key in dst_keys - src_keys:
         if key in excludes:
             continue
