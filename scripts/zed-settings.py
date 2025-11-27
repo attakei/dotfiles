@@ -46,7 +46,7 @@ def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None
             out[key] = merge_dict_recursive(src[key], dst[key])
         else:
             out[key] = src[key]
-    return dict(sorted(out.items()))
+    return out
 
 
 def main(args):
@@ -54,7 +54,9 @@ def main(args):
     src = jsonc.loads(args.source.read_text(encoding="utf-8"))
     dest = jsonc.loads(args.destination.read_text(encoding="utf-8"))
     out = merge_dict_recursive(src, dest, exclude_list)
-    args.destination.write_text(jsonc.dumps(out, indent=2), encoding="utf-8")
+    args.destination.write_text(
+        jsonc.dumps(out, indent=2, sort_keys=True), encoding="utf-8"
+    )
 
 
 if __name__ == "__main__":
