@@ -13,3 +13,21 @@ tasks:
       - 'aqua i'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
+  zed-push:
+    desc: 'Push Zed settings'
+    dir: '{{.TASKFILE_DIR}}'
+    cmds:
+      - >
+        uv run scripts/zed-settings.py
+        --exclude=wsl_connections
+        ./root/.config/zed/settings.base.json
+        ./root/.config/zed/settings.json
+  zed-pull:
+    desc: 'Pull Zed settings'
+    dir: '{{.TASKFILE_DIR}}'
+    cmds:
+      - >
+        uv run scripts/zed-settings.py
+        --exclude=wsl_connections
+        ./root/.config/zed/settings.json
+        ./root/.config/zed/settings.base.json
