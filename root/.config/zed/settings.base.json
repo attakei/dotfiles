@@ -1,32 +1,21 @@
-// Zed settings
 {
-  "git_panel": {
-    "sort_by_path": true
-  },
-  "relative_line_numbers": "wrapped",
-  "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "buffer_font_family": "HackGen Console NF",
   "buffer_font_fallbacks": [
     "HackGen Console NF"
   ],
-  "theme": {
-    "mode": "system",
-    "light": "Gruvbox Light Hard",
-    "dark": "One Dark"
-  },
-  "status_bar": {
-    "active_language_button": true,
-    "cursor_position_button": true,
-    "line_endings_button": true
+  "buffer_font_family": "HackGen Console NF",
+  "buffer_font_size": 15,
+  "git_panel": {
+    "sort_by_path": true
   },
   "languages": {
+    "HTML": {
+      "formatter": "language_server"
+    },
     "Python": {
       "language_servers": [
+        "!basepyright",
         "ty",
-        "ruff",
-        "!basepyright"
+        "ruff"
       ]
     },
     "YAML": {
@@ -34,6 +23,15 @@
     }
   },
   "lsp": {
+    "vscode-html-language-server": {
+      "settings": {
+        "html": {
+          "format": {
+            "indentInnerHtml": true
+          }
+        }
+      }
+    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
@@ -44,11 +42,24 @@
       }
     }
   },
+  "relative_line_numbers": "wrapped",
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": true,
+    "line_endings_button": true
+  },
   "terminal": {
     "detect_venv": "off",
     "font_family": "HackGen Console NF",
     "shell": {
       "program": "nu"
     }
-  }
+  },
+  "theme": {
+    "dark": "One Dark",
+    "light": "Gruvbox Light Hard",
+    "mode": "system"
+  },
+  "ui_font_size": 16,
+  "vim_mode": true
 }
