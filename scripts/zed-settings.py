@@ -21,74 +21,39 @@ parser.add_argument("source", type=Path, help="Source directory")
 parser.add_argument("destination", type=Path, help="Destination directory")
 
 
-def dump_json_key_path(key, value, indent=2):
-    value_lines = jsonc.dumps(value, indent=indent).split("\n")
-    dumped_lines = []
-    space = " " * indent
-    for i, line in enumerate(value_lines):
-        new_line: str
-        if i == 0:
-            new_line = f'{space}"{key}": {line}'
+def merge_dict_recursive(src: dict, dst: dict, excludes: list[str] | None = None) -> dict:
+    out = {}
+    excludes = excludes or []
+    src_keys = set(src.keys())
+    dst_keys = set(dst.keys())
+    for key in excludes:
+        out[key] = dst[key]
+    for key in dst_keys - src_keys:
+        if key in excludes:
+            continue
+        out[key] = dst[key]
+    for key in src_keys - dst_keys:
+        if key in excludes:
+            continue
+        out[key] = src[key]
+    for key in (src_keys & dst_keys):
+        if key in excludes:
+            continue
+        if isinstance(dst[key], list):
+            out[key] = list(set(src[key] + dst[key]))
+        elif isinstance(dst[key], dict):
+            out[key] = merge_dict_recursive(src[key], dst[key])
         else:
-            new_line = f"{space}{line}"
-        if i == len(value_lines) - 1:
-            new_line += ","
-        dumped_lines.append(new_line)
-    return "\n".join(dumped_lines)
+            out[key] = src[key]
+    return dict(sorted(out.items()))
 
 
 def main(args):
-    # Parse source.
     exclude_list = args.exclude.split(",")
-    source = jsonc.loads(args.source.read_text())
-    source = {k: v for k, v in source.items() if k not in exclude_list}
-    # Merge to destination.
-    lines = args.destination.read_text().split("\n")
-    dest = []
-    keep_append = True
-    for line in lines:
-        # Pich json key
-        if line.startswith('  "'):
-            key = line.split('"')[1]
-            if key in source:
-                value = source.pop(key)
-                dumped_lines = dump_json_key_path(key, value)
-                dest += dumped_lines.split("\n")
-                keep_append = False
-            else:
-                dest.append(line)
-                keep_append = True
-        elif line == "}":
-            dest.append(line)
-        elif line == "  }" and dest[-1] not in ("  }", "  },"):
-            dest.append(line)
-        elif keep_append:
-            dest.append(line)
-    tail = []
-    if source:
-        for line in reversed(dest):
-            tail.append(line)
-            dest.pop(-1)
-            if line == "}":
-                if not dest[-1].endswith(","):
-                    dest[-1] += ","
-                break
-        if not dest[-1].endswith(","):
-            dest[-1] += ","
-        for idx, key in enumerate(source.keys()):
-            dumped_lines = dump_json_key_path(key, source[key])
-            dest += dumped_lines.split("\n")
-        dest += tail
-    tail = []
-    for line in reversed(dest):
-        tail.append(line)
-        dest.pop(-1)
-        if line == "}":
-            if dest[-1].endswith(","):
-                dest[-1] = dest[-1][:-1]
-            break
-    dest += tail
-    args.destination.write_text("\n".join(dest))
+    src = jsonc.loads(args.source.read_text())
+    dest = jsonc.loads(args.destination.read_text())
+    out = merge_dict_recursive(src, dest, exclude_list)
+    args.destination.write_text(jsonc.dumps(out, indent=2))
 
 
 if __name__ == "__main__":
