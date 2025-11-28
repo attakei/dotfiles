@@ -18,7 +18,7 @@ tasks:
     dir: '{{.TASKFILE_DIR}}'
     cmds:
       - >
-        uv run scripts/zed-settings.py
+        {{.ZED_SYNC_SETTINGS}}
         --exclude=wsl_connections
         ./root/.config/zed/settings.base.json
         ./root/.config/zed/settings.json
@@ -27,7 +27,18 @@ tasks:
     dir: '{{.TASKFILE_DIR}}'
     cmds:
       - >
-        uv run scripts/zed-settings.py
+        {{.ZED_SYNC_SETTINGS}}
         --exclude=wsl_connections
         ./root/.config/zed/settings.json
         ./root/.config/zed/settings.base.json
+
+vars:
+  ZED_SYNC_SETTINGS:
+    sh: |
+      if [ -f .bin/zed-settings ]; then
+        echo ".bin/zed-settings"
+      elif [ -f .bin/zed-settings.exe ]; then
+        echo ".bin/zed-settings.exe"
+      else
+        echo "uv run scripts/zed-settings.py"
+      fi
