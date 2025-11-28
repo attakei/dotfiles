@@ -8,11 +8,17 @@ includes:
 tasks:
   update:
     desc: 'Update env'
+    dotenv:
+      - '.env'
     cmds:
       - 'git pull'
       - 'aqua i'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
+      - |
+        if [ "$USE_NIMBLE" = "1" ]; then
+          nimble build
+        fi
   zed-push:
     desc: 'Push Zed settings'
     dir: '{{.TASKFILE_DIR}}'
