@@ -14,8 +14,8 @@
     "Python": {
       "language_servers": [
         "!basepyright",
-        "ty",
-        "ruff"
+        "ruff",
+        "ty"
       ]
     },
     "YAML": {
