@@ -50,6 +50,13 @@ function nvimp () {
   fi
 }
 
+function zpwd () {
+  repo_name=$(basename `pwd`)
+  repo_dir=$(dirname `pwd`)
+  org_name=$(basename $repo_dir)
+  echo "${org_name}#${repo_name}"
+}
+
 # Completions
 . <( zellij setup --generate-completion zsh | sed -Ee 's/^(_(zellij) ).*/compdef \1\2/' )
 
