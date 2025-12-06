@@ -2,6 +2,10 @@
 # - Zsh interactive shell settings for me (cross-env)
 # --------------------------------------
 
+# Completions pre-sheldon
+zstyle ':autocomplete:*' delay 1.0
+zstyle ':autocomplete:*' min-input 2
+
 # Configure with sheldon
 eval "$(sheldon source)"
 
