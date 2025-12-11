@@ -18,9 +18,6 @@ shell = "zsh"
 #
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
-[plugins.zeno]
-github = "yuki-yano/zeno.zsh"
-
 [plugins.autosuggenstions]
 github = "zsh-users/zsh-autosuggestions"
 
@@ -36,3 +33,6 @@ github = "marlonrichert/zsh-autocomplete"
 [plugins.oh-my-posh]
 inline = "eval $(oh-my-posh init zsh)"
 profiles = ["gui"]
+
+[plugins.zeno]
+github = "yuki-yano/zeno.zsh"
