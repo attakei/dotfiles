@@ -7,7 +7,11 @@ zstyle ':autocomplete:*' delay 1.0
 zstyle ':autocomplete:*' min-input 2
 
 # Configure with sheldon
-eval "$(sheldon source)"
+if [[ "$(tty)" =~ "/dev/tty[0-9]+" ]] ; then
+  eval "$(sheldon source)"
+else
+  eval "$(sheldon --profile gui source)"
+fi
 
 setopt share_history
 
@@ -33,13 +37,6 @@ if [[ -n $ZENO_LOADED ]]; then
   bindkey '^r' zeno-history-selection
   bindkey '^x' zeno-insert-snippet
 fi
-
-# Use starship
-if [[ "$(tty)" =~ "/dev/tty[0-9]+" ]] ; then
-else
-  eval "$(oh-my-posh init zsh)"
-fi
-
 
 # NeoVim using Python virtualenv
 function nvimp () {
