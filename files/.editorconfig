@@ -19,7 +19,7 @@ charset = sjis
 
 
 # 2 space indentation
-[*.{yml,js,json,jsx,ts,tsx,json,rst,html,scss,nim,nims,nimble}]
+[*.{yml,yaml,js,jsx,ts,tsx,json,jsonc,json5,rst,html,css,sass,scss,nim,nims,nimble}]
 indent_size = 2
 
 # 4 space indentation

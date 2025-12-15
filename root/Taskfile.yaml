@@ -30,3 +30,10 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - 'bun x @google/gemini-cli {{.CLI_ARGS}}'
+  gitfiles:
+    cmds:
+      - cmd: 'cp {{.TASKFILE_DIR}}files/{{.ITEM}} {{.USER_WORKING_DIR}}'
+        for:
+          - '.editorconfig'
+          - '.gitattributes'
+      - 'curl -o {{.USER_WORKING_DIR}}/LICENSE https://www.apache.org/licenses/LICENSE-2.0.txt'
