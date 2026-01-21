@@ -43,3 +43,13 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
 } else {
   # TODO: Path settings for Linux
 }
+
+# bun
+if (uname | get kernel-name | str contains 'Windows_NT') {
+  let bin_dir = $env.USERPROFILE + '\.bun\bin'
+  if ($bin_dir not-in $env.PATH) {
+    $env.PATH = $env.PATH | prepend $bin_dir
+  }
+} else {
+  # TODO: Path settings for Linux
+}

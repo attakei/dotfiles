@@ -15,6 +15,7 @@ tasks:
       - 'aqua i'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
+      - 'nu scripts/sync-bun-tools.nu'
       - |
         if [ "$USE_NIMBLE" = "1" ]; then
           nimble build
