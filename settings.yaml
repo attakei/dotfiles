@@ -76,6 +76,10 @@ links:
       # TODO: Configure for Windows
       Linux: '{{HOME}}/.config/gitui'
       Darwin: '{{HOME}}/.config/gitui'
+  # Rio
+  - source: 'root/.config/rio'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\AppData\Local\rio'
   # Zed
   - source: 'root/.config/zed'
     targets:
