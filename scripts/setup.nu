@@ -56,8 +56,5 @@ for $link in $links {
   }
 }
 
-# Configure Starship
-if (not ($'($HOME)/.cache/starship/init.nu' | path exists)) {
-  mkdir $"($HOME)/.cache/starship"
-  starship init nu | save -f ~/.cache/starship/init.nu
-}
+# Configure Oh My Zsh
+oh-my-posh init nu
