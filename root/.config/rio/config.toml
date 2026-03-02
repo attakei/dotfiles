@@ -1,0 +1,20 @@
+# working-dir = "~"
+# env-vars = []
+
+[window]
+width = 960
+height = 640
+
+[fonts]
+family = "HackGen Console NF"
+
+[shell]
+program = "nu"
+args = ["-l"] #, "-e", "cd ~"]
+
+# [bindings]
+# keys = [
+#   { key = "q", with = "super", action = "Quit" },
+#   # Send escape sequence to clear screen
+#   { key = "l", with = "control", esc = "\u001b[2J\u001b[H" }
+# ]
