@@ -88,6 +88,7 @@ links:
   - source: 'root/.config/zed'
     targets:
       Windows_NT: '{{APPDATA}}\Zed'
+      Linux: '{{HOME}}/.config/zed'
       Darwin: '{{HOME}}/.config/zed'
 uv-tools:
   - 'esbonio@1.0.0'
