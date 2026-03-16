@@ -1,0 +1,10 @@
+keybinds {
+    locked {
+        unbind "Ctrl g"
+        bind "Ctrl x" { SwitchToMode "Normal"; }
+    }
+    normal {
+        unbind "Ctrl g"
+        bind "Ctrl x" { SwitchToMode "Locked"; }
+    }
+}
