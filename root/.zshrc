@@ -26,6 +26,8 @@ bindkey '\CE' end-of-line
 # path=(
 #   $path
 # )
+alias claude='bunx @anthropic-ai/claude-code'
+alias copilot='bunx @github/copilot'
 
 ## Config for zeno.zsh
 if [[ -n $ZENO_LOADED ]]; then
