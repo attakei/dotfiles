@@ -41,6 +41,9 @@ export DOCKER_CONFIG=$HOME/.local/opt/docker-config
 # Editor on shell
 export EDITOR=`which vim`
 
+# Disable Deno update announce for zeno.zsh
+export DENO_NO_UPDATE_CHECK=1
+
 # Load machine-local .zshenv
 if [ -e "$HOME/.zshenv.local" ] ; then
   source "$HOME/.zshenv.local"
