@@ -18,6 +18,7 @@ path=(
   "/snap/bin"
 )
 path=(
+  $HOME/.bun/bin
   $HOME/.nimble/bin
   $HOME/.cargo/bin
   $path
