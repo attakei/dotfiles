@@ -22,7 +22,7 @@ proc parseArgument(cmdline: string = ""): Argument =
     of cmdArgument:
       let path = Path(p.key).expandTilde.absolutePath
       if not path.fileExists:
-        raise newException(ValueError, "File not found: " & $path)
+        raise newException(ValueError, "File not found: " & string(path))
       if result.src.isNone:
         result.src = some(path)
       elif result.dest.isNone:
@@ -66,9 +66,9 @@ proc mergeSettings(src: JsonNode, dest: JsonNode, excludes: seq[string]): JsonNo
 when isMainModule:
   try:
     let args = parseArgument()
-    let src = parseFile($args.src.get())
-    let dest = parseFile($args.dest.get())
+    let src = parseFile(string(args.src.get()))
+    let dest = parseFile(string(args.dest.get()))
     let merged = mergeSettings(src, dest, args.excludes)
-    writeFile($args.dest.get(), merged.pretty())
+    writeFile(string(args.dest.get()), merged.pretty())
   except ValueError as e:
     echo("Error:", e.msg)
