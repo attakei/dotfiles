@@ -3,6 +3,9 @@ pre-commit:
   jobs:
     - name: Lua
       glob: "*.lua"
+      exclude:
+        - 'root/.config/nvim/*'  # Old NeoVim settings is based on AstroNvim, and I will remove after worked nvim-2026
+        - 'root/.config/wezterm/*'  # TODO: Fix them after merged into 'main' branch.
       group:
         piped: true
         jobs:
