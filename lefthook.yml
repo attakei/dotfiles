@@ -8,5 +8,7 @@ pre-commit:
         jobs:
           - name: Stylua
             run: stylua {staged_files}
+            stage_fiexed: true
           - name: Selene
             run: selene {staged_files}
+            stage_fiexed: true
