@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Lua
+      glob: "*.lua"
+      group:
+        piped: true
+        jobs:
+          - name: Stylua
+            run: stylua {staged_files}
+          - name: Selene
+            run: selene {staged_files}

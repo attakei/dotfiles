@@ -49,3 +49,6 @@ packages:
 - name: sharkdp/fd@v10.4.2
 - name: github/copilot-cli@v1.0.12
   registry: github/copilot-cli
+- name: JohnnyMorganz/StyLua@v2.4.0
+- name: Kampfkarren/selene/light@0.30.1
+- name: evilmartians/lefthook@v2.1.4
