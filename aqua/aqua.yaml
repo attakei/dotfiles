@@ -19,6 +19,9 @@ registries:
 - name: attakei-gigi
   type: local
   path: registry-gigi.yaml
+- name: github/copilot-cli
+  type: local
+  path: registry/copilot-cli.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.67.0
@@ -42,3 +45,7 @@ packages:
 - name: ziglang/zig@0.15.2
 - name: attakei/gigi@v0.2.1
   registry: attakei-gigi
+- name: BurntSushi/ripgrep@15.1.0
+- name: sharkdp/fd@v10.4.2
+- name: github/copilot-cli@v1.0.12
+  registry: github/copilot-cli

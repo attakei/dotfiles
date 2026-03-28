@@ -13,7 +13,11 @@ registries:
   - name: attakei-gigi
     type: local
     path: registry-gigi.yaml
+  - name: github/copilot-cli
+    type: local
+    path: registry/copilot-cli.yaml
 packages:
   - registry: standard
   - registry: attakei-age
   - registry: attakei-gigi
+  - registry: github/copilot-cli
