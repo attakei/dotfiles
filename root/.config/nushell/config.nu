@@ -52,3 +52,9 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
 } else {
   # TODO: Path settings for Linux
 }
+
+# Remove features for internal terminal of NeoVim.
+if "NVIM" in $env {
+  const NVIM_DISABLE_KEYBINDGS = ['fuzzy_ghq']
+  $env.config.keybindings = $env.config.keybindings | where name not-in $NVIM_DISABLE_KEYBINDGS
+}
