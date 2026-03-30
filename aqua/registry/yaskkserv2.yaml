@@ -1,0 +1,29 @@
+packages:
+  - type: github_release
+    repo_owner: wachikun
+    repo_name: yaskkserv2
+    description: Yet Another SKK server
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        asset: yaskkserv2-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        files:
+          - name: yaskkserv2
+            src: '{{.AssetWithoutExt}}/yaskkserv2'
+          - name: yaskkserv2_make_dictionary
+            src: '{{.AssetWithoutExt}}/yaskkserv2_make_dictionary'
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+          - amd64

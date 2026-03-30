@@ -22,6 +22,9 @@ registries:
 - name: github/copilot-cli
   type: local
   path: registry/copilot-cli.yaml
+- name: github/yaskkserv2
+  type: local
+  path: registry/yaskkserv2.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.67.0
@@ -49,3 +52,5 @@ packages:
 - name: sharkdp/fd@v10.4.2
 - name: github/copilot-cli@v1.0.12
   registry: github/copilot-cli
+- name: wachikun/yaskkserv2@0.1.7
+  registry: github/yaskkserv2

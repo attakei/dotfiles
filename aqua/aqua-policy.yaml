@@ -16,8 +16,12 @@ registries:
   - name: github/copilot-cli
     type: local
     path: registry/copilot-cli.yaml
+  - name: github/yaskkserv2
+    type: local
+    path: registry/yaskkserv2.yaml
 packages:
   - registry: standard
   - registry: attakei-age
   - registry: attakei-gigi
   - registry: github/copilot-cli
+  - registry: github/yaskkserv2
