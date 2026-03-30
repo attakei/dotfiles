@@ -42,7 +42,7 @@ tasks:
     desc: 'Install scoop packages'
     cmds:
       - 'scoop install {{.CLI_ARGS}}'
-      - 'scoop export | save -f files/scoop-lock.json'
+      - 'scoop export -c > files/scoop-lock.json'
 
 vars:
   ZED_SYNC_SETTINGS:
