@@ -1,16 +1,7 @@
 {
-    "buckets": [
-        {
-            "Name": "main",
-            "Source": "https://github.com/ScoopInstaller/Main.git",
-            "Updated": {
-                "value": "\/Date(1774874420000)\/",
-                "DisplayHint": 2,
-                "DateTime": "2026年3月30日 21:40:20"
-            },
-            "Manifests": 1478
-        }
-    ],
+    "config": {
+        "aria2-warning-enabled": false
+    },
     "apps": [
         {
             "Info": "",
@@ -18,6 +9,13 @@
             "Name": "7zip",
             "Version": "26.00",
             "Updated": "\/Date(1774876414834)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aqua",
+            "Version": "2.57.1",
+            "Updated": "\/Date(1774884930221)\/"
         },
         {
             "Info": "",
@@ -32,6 +30,18 @@
             "Name": "git",
             "Version": "2.53.0.2",
             "Updated": "\/Date(1774876461986)\/"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1774874420000)\/",
+                "DisplayHint": 2,
+                "DateTime": "2026年3月30日 21:40:20"
+            },
+            "Manifests": 1478
         }
     ]
 }

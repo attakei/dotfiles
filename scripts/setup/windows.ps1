@@ -13,10 +13,11 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 }
 
-# Configuration
-# -------------
-scoop config aria2-warning-enabled false
-
-# Import current items
-# --------------------
+# Import current config and apps
+# ------------------------------
 scoop import files/scoop-lock.json
+
+# Run shared setup script
+# =======================
+Set-Location $PSScriptRoot\..\..\
+nu script/setup.nu
