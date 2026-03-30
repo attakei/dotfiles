@@ -5,19 +5,19 @@
 registries:
   - type: standard
     ref: semver(">= 3.0.0")
-  - name: attakei-age
+  - name: local/copilot-cli
+    type: local
+    path: registry/copilot-cli.yaml
+  - name: local/gigi
+    type: local
+    path: registry/gigi.yaml
+  - name: attakei/age
     type: github_content
     repo_owner: attakei
     repo_name: age
     path: registry.yaml
-  - name: attakei-gigi
-    type: local
-    path: registry-gigi.yaml
-  - name: github/copilot-cli
-    type: local
-    path: registry/copilot-cli.yaml
 packages:
   - registry: standard
-  - registry: attakei-age
-  - registry: attakei-gigi
-  - registry: github/copilot-cli
+  - registry: local/copilot-cli
+  - registry: local/gigi
+  - registry: attakei/age

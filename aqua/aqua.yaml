@@ -10,18 +10,18 @@
 registries:
 - type: standard
   ref: v4.446.0 # renovate: depName=aquaproj/aqua-registry
-- name: attakei-age
+- name: local/copilot-cli
+  type: local
+  path: registry/copilot-cli.yaml
+- name: local/gigi
+  type: local
+  path: registry/gigi.yaml
+- name: attakei/age
   type: github_content
   repo_owner: attakei
   repo_name: age
   ref: v0.10.2
   path: registry.yaml
-- name: attakei-gigi
-  type: local
-  path: registry-gigi.yaml
-- name: github/copilot-cli
-  type: local
-  path: registry/copilot-cli.yaml
 packages:
 - name: x-motemen/ghq@v1.8.0
 - name: junegunn/fzf@v0.67.0
@@ -31,7 +31,7 @@ packages:
 - name: jesseduffield/lazygit@v0.57.0
 - name: zellij-org/zellij@v0.43.1
 - name: attakei/age@v0.10.2
-  registry: attakei-age
+  registry: attakei/age
 - name: rossmacarthur/sheldon@0.8.5
 - name: starship/starship@v1.24.1
 - name: JanDeDobbeleer/oh-my-posh@v28.2.2
@@ -44,8 +44,8 @@ packages:
 - name: oven-sh/bun@bun-v1.3.4
 - name: ziglang/zig@0.15.2
 - name: attakei/gigi@v0.2.1
-  registry: attakei-gigi
+  registry: local/gigi
 - name: BurntSushi/ripgrep@15.1.0
 - name: sharkdp/fd@v10.4.2
 - name: github/copilot-cli@v1.0.12
-  registry: github/copilot-cli
+  registry: local/copilot-cli
