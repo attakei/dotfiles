@@ -1,0 +1,37 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1774874420000)\/",
+                "DisplayHint": 2,
+                "DateTime": "2026年3月30日 21:40:20"
+            },
+            "Manifests": 1478
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "26.00",
+            "Updated": "\/Date(1774876414834)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aria2",
+            "Version": "1.37.0-1",
+            "Updated": "\/Date(1774876409715)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "git",
+            "Version": "2.53.0.2",
+            "Updated": "\/Date(1774876461986)\/"
+        }
+    ]
+}
