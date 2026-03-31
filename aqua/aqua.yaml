@@ -16,6 +16,9 @@ registries:
 - name: local/gigi
   type: local
   path: registry/gigi.yaml
+- name: local/zellij
+  type: local
+  path: registry/zellij.yaml
 - name: attakei/age
   type: github_content
   repo_owner: attakei
@@ -29,7 +32,6 @@ packages:
 - name: volta-cli/volta@v2.0.2
 - name: denoland/deno@v2.6.0
 - name: jesseduffield/lazygit@v0.57.0
-- name: zellij-org/zellij@v0.43.1
 - name: attakei/age@v0.10.2
   registry: attakei/age
 - name: rossmacarthur/sheldon@0.8.5
@@ -49,3 +51,5 @@ packages:
 - name: sharkdp/fd@v10.4.2
 - name: github/copilot-cli@v1.0.12
   registry: local/copilot-cli
+- name: zellij-org/zellij@v0.44.0
+  registry: local/zellij
