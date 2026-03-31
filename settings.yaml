@@ -79,6 +79,7 @@ links:
   # Zellij
   - source: 'root/.config/zellij'
     targets:
+      Windows_NT: '{{USERPROFILE}}\AppData\Roaming\Zellij\config'
       Linux: '{{HOME}}/.config/zellij'
   # Rio
   - source: 'root/.config/rio'
