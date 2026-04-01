@@ -55,5 +55,6 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
 
 # Zellij
 if (uname | get kernel-name | str contains 'Windows_NT') {
+  $env.ZELLIJ_CONFIG_DIR = $DOTFILES_ROOT | path join 'root' '.config' 'zellij'
   $env.SHELL = which nu | get path.0
 }
