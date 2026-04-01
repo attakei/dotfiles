@@ -9,16 +9,13 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.446.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.491.0 # renovate: depName=aquaproj/aqua-registry
 - name: local/copilot-cli
   type: local
   path: registry/copilot-cli.yaml
 - name: local/gigi
   type: local
   path: registry/gigi.yaml
-- name: local/zellij
-  type: local
-  path: registry/zellij.yaml
 - name: attakei/age
   type: github_content
   repo_owner: attakei
@@ -52,4 +49,3 @@ packages:
 - name: github/copilot-cli@v1.0.12
   registry: local/copilot-cli
 - name: zellij-org/zellij@v0.44.0
-  registry: local/zellij

@@ -11,9 +11,6 @@ registries:
   - name: local/gigi
     type: local
     path: registry/gigi.yaml
-  - name: local/zellij
-    type: local
-    path: registry/zellij.yaml
   - name: attakei/age
     type: github_content
     repo_owner: attakei
@@ -23,5 +20,4 @@ packages:
   - registry: standard
   - registry: local/copilot-cli
   - registry: local/gigi
-  - registry: local/zellij
   - registry: attakei/age
