@@ -52,3 +52,8 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
 } else {
   # TODO: Path settings for Linux
 }
+
+# Zellij
+if (uname | get kernel-name | str contains 'Windows_NT') {
+  $env.SHELL = which nu | get path.0
+}
