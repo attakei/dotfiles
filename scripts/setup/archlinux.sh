@@ -34,6 +34,22 @@ for RC in "$HOME/.profile" "$HOME/.bashrc"; do
     fi
 done
 
+# Launch Nushell from bash when interactive
+# ==========================
+# nu is managed by aqua, so it cannot be set as login shell directly.
+# Instead, keep bash as login shell and exec nu after PATH is configured.
+BASHRC="$HOME/.bashrc"
+if ! grep -q "exec nu" "$BASHRC" 2>/dev/null; then
+    cat >> "$BASHRC" <<'EOF'
+
+# Launch nu (managed by aqua) as interactive shell
+if [ -z "${NU_LAUNCHED:-}" ] && [ -n "${WSL_DISTRO_NAME:-}" ] && command -v nu >/dev/null 2>&1; then
+    export NU_LAUNCHED=1
+    exec nu
+fi
+EOF
+fi
+
 export AQUA_GLOBAL_CONFIG="$REPO_PATH/app/aqua/aqua.yaml"
 export AQUA_POLICY_CONFIG="$REPO_PATH/app/aqua/aqua-policy.yaml"
 export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH"
