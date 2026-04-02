@@ -3,21 +3,16 @@
 # ================================
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-# Scoop
-# =====
+# Fetch repository
+$repoPath = "$env:USERPROFILE\ghq\github.com\attakei\dotfiles"
+if (-not (Test-Path $repoPath)) {
+    git clone https://github.com/attakei/dotfiles.git $repoPath
+}
+Set-Location $repoPath
 
-# Install
-# -------
+# Configure Scoop
 $env:PATH = "$env:USERPROFILE\scoop\shims;$env:PATH"
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 }
-
-# Import current config and apps
-# ------------------------------
 scoop import files/scoop-lock.json
-
-# Run shared setup script
-# =======================
-Set-Location $PSScriptRoot\..\..\
-nu script/setup.nu
