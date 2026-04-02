@@ -4,6 +4,8 @@ use ./aliases.nu *
 use ./commands.nu *
 use ./apps/zellij.nu *
 
+const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
+
 # For Windows
 $env.config.shell_integration = {
     osc2: false
@@ -29,19 +31,6 @@ $env.config.keybindings = $env.config.keybindings | append [
   }
 ]
 
-# aqua
-# const DOTFILES_ROOT = path self | path join .. ..
-const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
-$env.AQUA_GLOBAL_CONFIG = ($DOTFILES_ROOT | path join 'aqua' 'aqua.yaml') + ($env.AQUA_GLOBAL_CONFIG? | "")
-$env.AQUA_POLICY_CONFIG = ($DOTFILES_ROOT | path join 'aqua' 'aqua-policy.yaml' ) + ($env.AQUA_POLICY_CONFIG? | "")
-if (uname | get kernel-name | str contains 'Windows_NT') {
-  let aqua_bin = $env.USERPROFILE + '\AppData\Local\aquaproj-aqua\bin'
-  if ($aqua_bin not-in $env.PATH) {
-    $env.PATH = $env.PATH | prepend $aqua_bin
-  }
-} else {
-  # TODO: Path settings for Linux
-}
 
 # bun
 if (uname | get kernel-name | str contains 'Windows_NT') {
