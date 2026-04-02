@@ -4,7 +4,16 @@ version = "0"
 description = "Docment management for dotfiles"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "esbonio>=0.16.5",
-    "sphinx>=8.1.3",
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "esbonio>=0.16.5",
+  "sphinx-autobuild>=2025.8.25",
+  { include-group = "doc" },
+]
+doc = [
+  "atsphinx-bulma>=0.4.1",
+  "atsphinx-footnotes>=0.3.2",
+  "sphinx>=8.1.3",
 ]
