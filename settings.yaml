@@ -76,10 +76,6 @@ links:
       # TODO: Configure for Windows
       Linux: '{{HOME}}/.config/gitui'
       Darwin: '{{HOME}}/.config/gitui'
-  # Zellij
-  - source: 'root/.config/zellij'
-    targets:
-      Linux: '{{HOME}}/.config/zellij'
   # Rio
   - source: 'root/.config/rio'
     targets:
