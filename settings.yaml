@@ -10,7 +10,7 @@ links:
       Linux: '{{HOME}}/.config/nushell'
       Darwin: '{{HOME}}/.config/nushell'
   # WezTerm
-  - source: 'app/wezterm'
+  - source: 'app/WezTerm'
     targets:
       Windows_NT: '{{USERPROFILE}}\.config\wezterm'
       Linux: '{{HOME}}/.config/wezterm'
@@ -28,7 +28,7 @@ links:
       Linux: '{{HOME}}/.config/uv'
       Darwin: '{{HOME}}/.config/uv'
   # alacritty
-  - source: 'app/alacritty'
+  - source: 'app/Alacritty'
     targets:
       Windows_NT: '{{APPDATA}}\alacritty'
       Linux: '{{HOME}}/.config/alacritty'
@@ -77,7 +77,7 @@ links:
       Linux: '{{HOME}}/.config/gitui'
       Darwin: '{{HOME}}/.config/gitui'
   # Rio
-  - source: 'app/rio'
+  - source: 'app/Rio'
     targets:
       Windows_NT: '{{USERPROFILE}}\AppData\Local\rio'
   # Zed
