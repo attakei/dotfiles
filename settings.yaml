@@ -15,12 +15,6 @@ links:
       Windows_NT: '{{USERPROFILE}}\.config\wezterm'
       Linux: '{{HOME}}/.config/wezterm'
       Darwin: '{{HOME}}/.config/wezterm'
-  # Taskfile
-  - source: 'root/Taskfile.yaml'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\Taskfile.yaml'
-      Linux: '{{HOME}}/Taskfile.yaml'
-      Darwin: '{{HOME}}/Taskfile.yaml'
   # uv
   - source: 'root/.config/uv'
     targets:
@@ -33,33 +27,12 @@ links:
       Windows_NT: '{{APPDATA}}\alacritty'
       Linux: '{{HOME}}/.config/alacritty'
       Darwin: '{{HOME}}/.config/alacritty'
-  # Biome
-  - source: 'root/biome.jsonc'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\biome.jsonc'
-      Linux: '{{HOME}}/biome.jsonc'
-      Darwin: '{{HOME}}/biome.jsonc'
-  # harper-ls
-  - source: 'root/.harper-dict.txt'
-    targets:
-      Windows_NT: '{{USERPROFILE}}\.harper-dict.txt'
-      Linux: '{{HOME}}/.harper-dict.txt'
-      Darwin: '{{HOME}}/.harper-dict.txt'
   # Starship
   - source: 'root/.config/starship.toml'
     targets:
       Windows_NT: '{{USERPROFILE}}\.config\starship.toml'
       Linux: '{{HOME}}/.config/starship.toml'
       Darwin: '{{HOME}}/.config/starship.toml'
-  # Zsh
-  - source: 'root/.zshenv'
-    targets:
-      Linux: '{{HOME}}/.zshenv'
-      Darwin: '{{HOME}}/.zshenv'
-  - source: 'root/.zshrc'
-    targets:
-      Linux: '{{HOME}}/.zshrc'
-      Darwin: '{{HOME}}/.zshrc'
   - source: 'root/.config/sheldon'
     targets:
       Linux: '{{HOME}}/.config/sheldon'

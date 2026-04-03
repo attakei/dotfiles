@@ -9,6 +9,8 @@ let HOME = if (uname | get kernel-name | str contains 'Windows_NT') { $env.USERP
 # From settings
 let links = open settings.yaml | get links
 
+const DOTFILES_ROOT = path self | path expand | path join ... | path expand
+
 # Pseudo templating to inject environment variables into string.
 def inject_env [src: string] {
   let replacements = ['APPDATA', 'HOME', 'USERPROFILE']
@@ -23,7 +25,35 @@ def inject_env [src: string] {
   return $val
 };
 
-# Create symlinks
+def make_symlink [src: string, dest: string] {
+  mkdir ($dest | path join '..')
+  if ( uname | get kernel-name | str contains 'Windows_NT') {
+    if ( $dest | path exists) {
+      rm -f $dest
+    } else if ( $dest | path exists --no-symlink) {
+      rm -t $dest
+    }
+    echo $src | save -f log
+    # echo  ($src | path type) | save -f log
+    if (($src | path type) == 'file') {
+      mklink $dest $src
+    } else {
+      mklink /D $dest $src
+    }
+  } else {
+    ln -snf $src $dest
+  }
+}
+
+# Make symlinks for HOME
+for $file in (ls ($DOTFILES_ROOT | path join 'app/HOME')) {
+  let filename = $file.name | path basename
+  let source_resolved = $file.name | path expand
+  let target_resolved = '~' | path expand | path join $filename
+  make_symlink $source_resolved $target_resolved
+}
+
+# Create symlinks for other directories
 for $link in $links {
   let source = $link.source | str replace -a '/' $PD
   let source_resolved = $'($env.PWD)($PD)($source)'
@@ -32,22 +62,7 @@ for $link in $links {
     continue
   }
   let target_resolved = inject_env $target
-  if ( uname | get kernel-name | str contains 'Windows_NT') {
-    if ( $target_resolved | path exists) {
-      rm -f $target_resolved
-    } else if ( $target_resolved | path exists --no-symlink) {
-      rm -t $target_resolved
-    }
-    mkdir ($target_resolved | path join '..')
-    if ((echo $source_resolved | path type) == 'file') {
-      mklink $target_resolved $source_resolved
-    } else {
-      mklink /D $target_resolved $source_resolved
-    }
-  } else {
-    mkdir ($target_resolved | path dirname)
-    ln -snf $source_resolved $target_resolved
-  }
+  make_symlink $source_resolved $target_resolved
 }
 
 # Configure Oh My Zsh
