@@ -1,5 +1,15 @@
 # Shortcuts for Zellij
 
+use ../vendor/nu_scripts/custom-completions/zellij/zellij-completions.nu *
+
+const DOTFILES_APP_DIR = path self | path expand | path dirname | path dirname | path dirname
+
+export-env {
+  let config_dir = $DOTFILES_APP_DIR | path join 'zellij'
+  $env.ZELLIJ_CONFIG_DIR = $config_dir
+  $env.SHELL = which nu | get path.0
+}
+
 # Function
 export def --env zellijp [] {
   let name = $env.PWD | path basename
