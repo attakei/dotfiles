@@ -41,8 +41,10 @@ for $link in $links {
   }
   let target_resolved = inject_env $target
   if ( uname | get kernel-name | str contains 'Windows_NT') {
-    if ( $target_resolved | path exists ) {
-      rm -rf $target_resolved
+    if ( $target_resolved | path exists) {
+      rm -f $target_resolved
+    } else if ( $target_resolved | path exists --no-symlink) {
+      rm -t $target_resolved
     }
     mkdir ($target_resolved | path join '..')
     if ((echo $source_resolved | path type) == 'file') {
