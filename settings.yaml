@@ -4,7 +4,7 @@
 # ------
 links:
   # nushell
-  - source: 'root/.config/nushell'
+  - source: 'app/Nushell'
     targets:
       Windows_NT: '{{APPDATA}}\nushell'
       Linux: '{{HOME}}/.config/nushell'
