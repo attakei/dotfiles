@@ -33,8 +33,6 @@ def make_symlink [src: string, dest: string] {
     } else if ( $dest | path exists --no-symlink) {
       rm -t $dest
     }
-    echo $src | save -f log
-    # echo  ($src | path type) | save -f log
     if (($src | path type) == 'file') {
       mklink $dest $src
     } else {
