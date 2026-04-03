@@ -81,7 +81,7 @@ links:
     targets:
       Windows_NT: '{{USERPROFILE}}\AppData\Local\rio'
   # Zed
-  - source: 'root/.config/zed'
+  - source: 'app/Zed'
     targets:
       Windows_NT: '{{APPDATA}}\Zed'
       Linux: '{{HOME}}/.config/zed'
