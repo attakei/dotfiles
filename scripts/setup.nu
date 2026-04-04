@@ -1,6 +1,7 @@
 # ----
 # Set up environment that works on cross-platform.
 # ----
+use std/log
 
 # Environment information
 let OS_NAME = (uname | get kernel-name)
@@ -26,6 +27,7 @@ def inject_env [src: string] {
 };
 
 def make_symlink [src: string, dest: string] {
+  log debug ('Make symlink from ' + $src + ' to ' + $dest)
   mkdir ($dest | path join '..')
   if ( uname | get kernel-name | str contains 'Windows_NT') {
     if ( $dest | path exists) {
