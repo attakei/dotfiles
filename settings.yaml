@@ -28,7 +28,7 @@ links:
       Linux: '{{HOME}}/.config/alacritty'
       Darwin: '{{HOME}}/.config/alacritty'
   # Starship
-  - source: 'root/.config/starship.toml'
+  - source: 'app/Starship/starship.toml'
     targets:
       Windows_NT: '{{USERPROFILE}}\.config\starship.toml'
       Linux: '{{HOME}}/.config/starship.toml'
