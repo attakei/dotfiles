@@ -33,7 +33,7 @@ links:
       Windows_NT: '{{USERPROFILE}}\.config\starship.toml'
       Linux: '{{HOME}}/.config/starship.toml'
       Darwin: '{{HOME}}/.config/starship.toml'
-  - source: 'root/.config/sheldon'
+  - source: 'app/sheldon'
     targets:
       Linux: '{{HOME}}/.config/sheldon'
       Darwin: '{{HOME}}/.config/sheldon'
