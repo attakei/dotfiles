@@ -16,7 +16,7 @@ links:
       Linux: '{{HOME}}/.config/wezterm'
       Darwin: '{{HOME}}/.config/wezterm'
   # uv
-  - source: 'root/.config/uv'
+  - source: 'app/uv'
     targets:
       Windows_NT: '{{USERPROFILE}}\.config\uv'
       Linux: '{{HOME}}/.config/uv'
