@@ -44,7 +44,7 @@ def make_symlink [src: string, dest: string] {
 }
 
 # Make symlinks for HOME
-for $file in (ls ($DOTFILES_ROOT | path join 'app/HOME')) {
+for $file in (ls -a ($DOTFILES_ROOT | path join 'app/HOME')) {
   let filename = $file.name | path basename
   let source_resolved = $file.name | path expand
   let target_resolved = '~' | path expand | path join $filename
