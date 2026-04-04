@@ -31,6 +31,9 @@ $env.config.keybindings = $env.config.keybindings | append [
   }
 ]
 
+# Shared environment variables
+$env.EDITOR = 'nvim --clean'
+
 
 # bun
 if (uname | get kernel-name | str contains 'Windows_NT') {
