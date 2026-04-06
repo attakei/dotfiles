@@ -9,7 +9,7 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.446.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.491.0 # renovate: depName=aquaproj/aqua-registry
 - name: local/copilot-cli
   type: local
   path: registry/copilot-cli.yaml
@@ -32,7 +32,6 @@ packages:
 - name: volta-cli/volta@v2.0.2
 - name: denoland/deno@v2.6.0
 - name: jesseduffield/lazygit@v0.57.0
-- name: zellij-org/zellij@v0.43.1
 - name: attakei/age@v0.10.2
   registry: attakei/age
 - name: rossmacarthur/sheldon@0.8.5
@@ -54,3 +53,4 @@ packages:
   registry: local/copilot-cli
 - name: wachikun/yaskkserv2@0.1.7
   registry: local/yaskkserv2
+- name: zellij-org/zellij@v0.44.0
