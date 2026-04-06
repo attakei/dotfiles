@@ -1,6 +1,7 @@
 ### GIGI version 0.2.1
 ### command with: python
 .bin
+.task
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
