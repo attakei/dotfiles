@@ -29,12 +29,12 @@ def inject_env [src: string] {
 def make_symlink [src: string, dest: string] {
   log debug ('Make symlink from ' + $src + ' to ' + $dest)
   mkdir ($dest | path join '..')
+  if ( $dest | path exists) {
+    rm -rf $dest
+  } else if ( $dest | path exists --no-symlink) {
+    rm -t $dest
+  }
   if ( uname | get kernel-name | str contains 'Windows_NT') {
-    if ( $dest | path exists) {
-      rm -f $dest
-    } else if ( $dest | path exists --no-symlink) {
-      rm -t $dest
-    }
     if (($src | path type) == 'file') {
       mklink $dest $src
     } else {
