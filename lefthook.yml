@@ -4,7 +4,7 @@ pre-commit:
     - name: Lua
       glob: "*.lua"
       exclude:
-        - 'app/NeoVim/*'  # Old NeoVim settings is based on AstroNvim, and I will remove after worked nvim-2026
+        - 'app/NeoVim.*/*'  # Old NeoVim settings is based on AstroNvim, and I will remove after worked nvim-2026
         - 'app/WezTerm/*'  # TODO: Fix them after merged into 'main' branch.
       group:
         piped: true
