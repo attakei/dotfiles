@@ -8,6 +8,11 @@ return {
     'nvim-tree/nvim-web-devicons', -- optional, but recommended
   },
   opts = {
+    sources = { 'filesystem', 'buffers', 'git_status' },
+    source_selector = {
+      winbar = true,
+      statusline = false,
+    },
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
