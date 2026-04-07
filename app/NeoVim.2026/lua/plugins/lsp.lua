@@ -5,8 +5,13 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'saghen/blink.cmp',
     },
     config = function()
+      vim.lsp.config('*', {
+        capabilities = require('blink.cmp').get_lsp_capabilities({}, false),
+      })
+
       require('mason').setup()
       require('mason-lspconfig').setup({
         ensure_installed = { 'lua_ls' },
