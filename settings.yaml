@@ -38,7 +38,7 @@ links:
       Linux: '{{HOME}}/.config/sheldon'
       Darwin: '{{HOME}}/.config/sheldon'
   # NeoVim
-  - source: 'app/NeoVim'
+  - source: 'app/NeoVim.2026'
     targets:
       Windows_NT: '{{USERPROFILE}}\AppData\Local\nvim'
       Linux: '{{HOME}}/.config/nvim'

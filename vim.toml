@@ -1,0 +1,7 @@
+# Lua Standard Library Format for settings of NeoVim
+[selene]
+base = "lua51"
+name = "vim"
+
+[vim]
+any = true

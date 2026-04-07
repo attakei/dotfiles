@@ -39,7 +39,7 @@ packages:
 - name: nushell/nushell@0.109.1
 - name: go-task/task@v3.45.5
 - name: gitui-org/gitui@v0.28.0
-- name: neovim/neovim@v0.11.6
+- name: neovim/neovim@v0.12.0
 - name: oven-sh/bun@bun-v1.3.4
 - name: ziglang/zig@0.15.2
 - name: attakei/gigi@v0.2.1
@@ -48,4 +48,7 @@ packages:
 - name: sharkdp/fd@v10.4.2
 - name: github/copilot-cli@v1.0.12
   registry: local/copilot-cli
+- name: JohnnyMorganz/StyLua@v2.4.0
+- name: Kampfkarren/selene/light@0.30.1
+- name: evilmartians/lefthook@v2.1.4
 - name: zellij-org/zellij@v0.44.0

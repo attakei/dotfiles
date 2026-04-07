@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  workflow_dispatch:
+
+env:
+  AQUA_GLOBAL_CONFIG: '${{ github.workspace }}/app/aqua/aqua.yaml'
+  AQUA_POLICY_CONFIG: '${{ github.workspace }}/app/aqua/aqua-policy.yaml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        with:
+          aqua_version: v2.51.2
+        env:
+          AQUA_CONFIG: 'app/aqua/aqua.yaml'
+      - name: Set up workspace
+        run: |
+          uv sync --dev --all-extras
+      - name: Lint by lefthook
+        run: |
+          lefthook run pre-commit --all-files
