@@ -4,13 +4,9 @@ return {
     build = ':TSUpdate',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
-      local configs = pcall(require, 'nvim-treesitter.configs')
-      if configs then
-        require('nvim-treesitter.configs').setup({
-          ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown', 'nu' },
-          highlight = { enable = true },
-        })
-      end
+      -- Install parsers using main branch API (ensure_installed was removed)
+      -- install() is a no-op if already up-to-date
+      require('nvim-treesitter').install({ 'lua', 'vim', 'vimdoc', 'markdown', 'nu' })
     end,
   },
 }
