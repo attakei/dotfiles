@@ -52,3 +52,4 @@ packages:
 - name: Kampfkarren/selene/light@0.30.1
 - name: evilmartians/lefthook@v2.1.4
 - name: zellij-org/zellij@v0.44.0
+- name: anthropics/claude-code@v2.1.97
