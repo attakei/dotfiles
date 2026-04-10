@@ -23,6 +23,10 @@ return {
     },
     window = {
       width = 30,
+        mappings = {
+          ["h"] = "toggle_node",
+          ["l"] = "toggle_node",
+        },
     },
   },
 }
