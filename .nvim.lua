@@ -1,2 +1,1 @@
--- TODO: nushellを見つけられないケースがあるみたいなので、一時的に無効化
 vim.lsp.enable('nu')
