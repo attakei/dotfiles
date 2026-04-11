@@ -5,3 +5,11 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.exrc = true
+
+if vim.fn.has('win32') == 1 then
+  -- For using Nushell internal shell for Windows
+  vim.opt.shell = 'nu'
+  vim.opt.shellcmdflag = '-c'
+  vim.opt.shellquote = ''
+  vim.opt.shellxquote = ''
+end
