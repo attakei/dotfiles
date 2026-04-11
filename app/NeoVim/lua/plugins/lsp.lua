@@ -37,7 +37,7 @@ return {
         end
       end
 
-      local servers = { 'lua_ls', 'vtsls' }
+      local servers = { 'jsonls' }
       for _, server in ipairs(servers) do
         vim.lsp.enable(server)
       end

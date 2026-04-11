@@ -1,6 +1,7 @@
 -- Bypass aqua-proxy by resolving real tool paths and prepending them to PATH.
 -- Only tools listed here are resolved.
 local tools = {
+  'bun',
   'tree-sitter',
   'nu',
   'uv',
