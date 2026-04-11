@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load options
 require('config.options')
+require('config.aqua-path')
 
 -- Enable plugins
 require('lazy').setup('plugins')
