@@ -41,6 +41,7 @@ config.initial_rows = 40
 config.initial_cols = 160
 
 --  Design
+config.color_scheme = 'tokyonight_night'
 config.font = wezterm.font("HackGen Console NF")
 
 --  Start up command
