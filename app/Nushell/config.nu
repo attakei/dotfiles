@@ -2,6 +2,7 @@ use vendor/nu_scripts/aliases/git/git-aliases.nu *
 use vendor/nu_scripts/custom-completions/git/git-completions.nu *
 use ./aliases.nu *
 use ./commands.nu *
+use ./app/nvim.nu *
 use ./app/zellij.nu *
 
 const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
@@ -43,10 +44,4 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
   }
 } else {
   # TODO: Path settings for Linux
-}
-
-# Remove features for internal terminal of NeoVim.
-if "NVIM" in $env {
-  const NVIM_DISABLE_KEYBINDGS = ['fuzzy_ghq']
-  $env.config.keybindings = $env.config.keybindings | where name not-in $NVIM_DISABLE_KEYBINDGS
 }
