@@ -9,4 +9,7 @@ keybinds {
         unbind "Ctrl q"
         bind "Ctrl x" { SwitchToMode "Locked"; }
     }
+    session {
+        bind "q" { Quit; }
+    }
 }
