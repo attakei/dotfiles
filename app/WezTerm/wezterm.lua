@@ -42,7 +42,11 @@ config.initial_cols = 160
 
 --  Design
 config.color_scheme = 'tokyonight_night'
-config.font = wezterm.font("HackGen Console NF")
+config.font = wezterm.font_with_fallback {
+  "UDEV Gothic NF",
+  "Noto Color Emoji",
+}
+config.font_size = 12
 
 --  Start up command
 config.default_prog = { exec_name('nu') }
