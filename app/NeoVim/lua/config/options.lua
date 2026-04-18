@@ -6,6 +6,9 @@ vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.exrc = true
 
+-- Keybindings
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
+
 if vim.fn.has('win32') == 1 then
   -- For using Nushell internal shell for Windows
   vim.opt.shell = 'nu'
