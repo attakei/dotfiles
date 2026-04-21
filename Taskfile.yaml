@@ -43,11 +43,14 @@ tasks:
         --exclude=wsl_connections
         ./root/.config/zed/settings.json
         ./root/.config/zed/settings.base.json
+  scoop-export:
+    desc: 'Export installed scoop packages'
+    cmd: 'scoop export -c > files/scoop-lock.json'
   scoop-install:
     desc: 'Install scoop packages'
     cmds:
       - 'scoop install {{.CLI_ARGS}}'
-      - 'scoop export -c > files/scoop-lock.json'
+      - task: scoop-export
 
 vars:
   ZED_SYNC_SETTINGS:
