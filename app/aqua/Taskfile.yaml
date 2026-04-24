@@ -1,0 +1,19 @@
+# ------
+# Tasks to manage global applications by aqua.
+# ------
+version: '3'
+
+tasks:
+  add:
+    desc: 'Add global application.'
+    cmds:
+      - 'aqua generate -i {{.CLI_ARGS}}'
+      - task: 'link'
+  link:
+    desc: 'Make symlink of applications.'
+    cmd: 'aqua install --only-link'
+  update:
+    desc: 'Update global applications.'
+    cmds:
+      - 'aqua update'
+      - task: 'link'

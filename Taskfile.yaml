@@ -1,6 +1,9 @@
 version: '3'
 
 includes:
+  aqua:
+    taskfile: './app/aqua/Taskfile.yaml'
+    dir: './app/aqua'
   docs:
     taskfile: 'https://github.com/attakei/workspace-configs.git//projects/sphinx-doc/Taskfile.yaml?tag=v0.6.0'
     vars:
@@ -17,7 +20,7 @@ tasks:
       - '.env'
     cmds:
       - 'git pull'
-      - 'aqua i'
+      - task: 'aqua:link'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
       - 'nu scripts/sync-bun-tools.nu'
