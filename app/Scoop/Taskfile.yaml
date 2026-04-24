@@ -1,0 +1,19 @@
+# ------
+# Tasks to manage global applications by Scoop.
+# ------
+version: '3'
+
+tasks:
+  install:
+    desc: 'Install scoop packages'
+    cmds:
+      - 'scoop install {{.CLI_ARGS}}'
+      - task: 'export'
+  update:
+    desc: 'Update global applications.'
+    cmds:
+      - 'scoop update'
+      - task: 'export'
+  export:
+    desc: 'Export installed scoop packages'
+    cmd: 'scoop export -c > scoop-lock.json'
