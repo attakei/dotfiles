@@ -95,21 +95,21 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1776775454000)\/",
+                "value": "\/Date(1777048775000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年4月21日 21:44:14"
+                "DateTime": "2026年4月25日 1:39:35"
             },
-            "Manifests": 1499
+            "Manifests": 1506
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1776787600000)\/",
+                "value": "\/Date(1777048776000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年4月22日 1:06:40"
+                "DateTime": "2026年4月25日 1:39:36"
             },
-            "Manifests": 2300
+            "Manifests": 2301
         },
         {
             "Name": "nerd-fonts",
