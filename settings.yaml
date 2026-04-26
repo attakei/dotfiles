@@ -53,6 +53,12 @@ links:
   - source: 'app/Rio'
     targets:
       Windows_NT: '{{USERPROFILE}}\AppData\Local\rio'
+  # Taskfile
+  - source: 'app/Task/Taskfile.yaml'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\Taskfile.yaml'
+      Linux: '{{HOME}}/Taskfile.yaml'
+      Darwin: '{{HOME}}/Taskfile.yaml'
   # Zed
   - source: 'app/Zed'
     targets:
