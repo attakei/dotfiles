@@ -1,0 +1,41 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+# ------
+# Global tasks using dotfiles repository.
+# ------
+version: '3'
+
+vars:
+  # DS:
+  #   sh: 'echo {{if eq OS "windows"}}\\\\{{else}}/{{end}}'
+  # BASE_DIR: '~{{.DS}}ghq{{.DS}}github.com{{.DS}}attakei{{.DS}}dotfiles{{.DS}}'
+  BASE_DIR: '~/ghq/github.com/attakei/dotfiles'
+
+tasks:
+  copy:items:
+    desc: 'Simple display list of static files on dotfiles.'
+    cmd: 'ls -al {{.BASE_DIR}}/files'
+  copy:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - 'cp {{.BASE_DIR}}/files/{{.SOURCE}} {{.DEST}}'
+  copy:*:
+    desc: 'Copy static file from dotfiles repo to working directory.'
+    vars:
+      SOURCE: '{{index .MATCH 0}}'
+      DEST: '.'
+    cmds:
+      - task: 'copy'
+        vars:
+          SOURCE: '{{.SOURCE}}'
+          DEST: '{{.DEST}}'
+  copy:*:*:
+    desc: 'Copy static file from dotfiles repo to specified path.'
+    vars:
+      SOURCE: '{{index .MATCH 0}}'
+      DEST: '{{index .MATCH 1}}'
+    cmds:
+      - task: 'copy'
+        vars:
+          SOURCE: '{{.SOURCE}}'
+          DEST: '{{.DEST}}'
