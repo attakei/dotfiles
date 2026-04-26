@@ -3,6 +3,10 @@
 # ------
 version: '3'
 
+env:
+  AQUA_GITHUB_TOKEN:
+    sh: 'gh auth token'
+
 tasks:
   add:
     desc: 'Add global application.'
