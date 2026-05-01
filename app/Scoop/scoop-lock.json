@@ -10,84 +10,98 @@
             "Source": "main",
             "Name": "7zip",
             "Version": "26.00",
-            "Updated": "\/Date(1774876414834)\/"
+            "Updated": "\/Date(1775899349411)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aqua",
             "Version": "2.57.1",
-            "Updated": "\/Date(1774884930221)\/"
+            "Updated": "\/Date(1775899354165)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aria2",
             "Version": "1.37.0-1",
-            "Updated": "\/Date(1774876409715)\/"
+            "Updated": "\/Date(1775899357083)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "claude",
-            "Version": "1.2581.0",
-            "Updated": "\/Date(1776264449663)\/"
+            "Version": "1.1617.0",
+            "Updated": "\/Date(1775899398055)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "claude-code",
-            "Version": "2.1.87",
-            "Updated": "\/Date(1774889975558)\/"
+            "Version": "2.1.101",
+            "Updated": "\/Date(1775899442393)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "firefox",
-            "Version": "149.0.2",
-            "Updated": "\/Date(1776250492970)\/"
+            "Version": "150.0.1",
+            "Updated": "\/Date(1777630479923)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "gh",
-            "Version": "2.89.0",
-            "Updated": "\/Date(1774892840102)\/"
+            "Version": "2.90.0",
+            "Updated": "\/Date(1776832552300)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "git",
             "Version": "2.53.0.2",
-            "Updated": "\/Date(1774876461986)\/"
+            "Updated": "\/Date(1775899500831)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "2.67.9",
+            "Updated": "\/Date(1777628531125)\/"
         },
         {
             "Info": "",
             "Source": "nerd-fonts",
             "Name": "JetBrainsMono-NF-Mono",
             "Version": "3.4.0",
-            "Updated": "\/Date(1776444331046)\/"
+            "Updated": "\/Date(1776832579216)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "slack",
             "Version": "4.49.81",
-            "Updated": "\/Date(1775737916120)\/"
+            "Updated": "\/Date(1776832604422)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "winmerge",
             "Version": "2.16.54.2",
-            "Updated": "\/Date(1776788275937)\/"
+            "Updated": "\/Date(1776832611170)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "winscp",
             "Version": "6.5.6",
-            "Updated": "\/Date(1776788335653)\/"
+            "Updated": "\/Date(1776832616886)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "zed",
+            "Version": "1.0.0",
+            "Updated": "\/Date(1777628564001)\/"
         }
     ],
     "buckets": [
@@ -95,21 +109,21 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1777048775000)\/",
+                "value": "\/Date(1777626113000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年4月25日 1:39:35"
+                "DateTime": "2026年5月1日 18:01:53"
             },
-            "Manifests": 1506
+            "Manifests": 1510
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1777048776000)\/",
+                "value": "\/Date(1777626822000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年4月25日 1:39:36"
+                "DateTime": "2026年5月1日 18:13:42"
             },
-            "Manifests": 2301
+            "Manifests": 2305
         },
         {
             "Name": "nerd-fonts",
