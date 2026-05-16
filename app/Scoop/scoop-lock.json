@@ -10,98 +10,112 @@
             "Source": "main",
             "Name": "7zip",
             "Version": "26.00",
-            "Updated": "\/Date(1775899349411)\/"
+            "Updated": "\/Date(1774876414834)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aqua",
             "Version": "2.57.1",
-            "Updated": "\/Date(1775899354165)\/"
+            "Updated": "\/Date(1774884930221)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aria2",
             "Version": "1.37.0-1",
-            "Updated": "\/Date(1775899357083)\/"
+            "Updated": "\/Date(1774876409715)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "claude",
-            "Version": "1.1617.0",
-            "Updated": "\/Date(1775899398055)\/"
+            "Version": "1.2581.0",
+            "Updated": "\/Date(1776264449663)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "claude-code",
-            "Version": "2.1.101",
-            "Updated": "\/Date(1775899442393)\/"
+            "Version": "2.1.87",
+            "Updated": "\/Date(1774889975558)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "codex",
+            "Version": "0.130.0",
+            "Updated": "\/Date(1778905974462)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "firefox",
-            "Version": "150.0.1",
-            "Updated": "\/Date(1777630479923)\/"
+            "Version": "149.0.2",
+            "Updated": "\/Date(1776250492970)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "gh",
-            "Version": "2.90.0",
-            "Updated": "\/Date(1776832552300)\/"
+            "Version": "2.89.0",
+            "Updated": "\/Date(1774892840102)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "git",
             "Version": "2.53.0.2",
-            "Updated": "\/Date(1775899500831)\/"
+            "Updated": "\/Date(1774876461986)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "imagemagick",
+            "Version": "7.1.2-22",
+            "Updated": "\/Date(1778816137609)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "innounp",
             "Version": "2.67.9",
-            "Updated": "\/Date(1777628531125)\/"
+            "Updated": "\/Date(1778767629818)\/"
         },
         {
             "Info": "",
             "Source": "nerd-fonts",
             "Name": "JetBrainsMono-NF-Mono",
             "Version": "3.4.0",
-            "Updated": "\/Date(1776832579216)\/"
+            "Updated": "\/Date(1776444331046)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "slack",
             "Version": "4.49.81",
-            "Updated": "\/Date(1776832604422)\/"
+            "Updated": "\/Date(1775737916120)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "winmerge",
             "Version": "2.16.54.2",
-            "Updated": "\/Date(1776832611170)\/"
+            "Updated": "\/Date(1776788275937)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "winscp",
             "Version": "6.5.6",
-            "Updated": "\/Date(1776832616886)\/"
+            "Updated": "\/Date(1776788335653)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "zed",
-            "Version": "1.0.0",
-            "Updated": "\/Date(1777628564001)\/"
+            "Version": "1.2.3",
+            "Updated": "\/Date(1778767644822)\/"
         }
     ],
     "buckets": [
@@ -109,29 +123,29 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1777626113000)\/",
+                "value": "\/Date(1778893840000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年5月1日 18:01:53"
+                "DateTime": "2026年5月16日 10:10:40"
             },
-            "Manifests": 1510
+            "Manifests": 1535
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1777626822000)\/",
+                "value": "\/Date(1778896068000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年5月1日 18:13:42"
+                "DateTime": "2026年5月16日 10:47:48"
             },
-            "Manifests": 2305
+            "Manifests": 2306
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
             "Updated": {
-                "value": "\/Date(1776526616000)\/",
+                "value": "\/Date(1777918754000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2026年4月19日 0:36:56"
+                "DateTime": "2026年5月5日 3:19:14"
             },
             "Manifests": 367
         }

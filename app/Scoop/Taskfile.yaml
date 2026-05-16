@@ -17,3 +17,6 @@ tasks:
   export:
     desc: 'Export installed scoop packages'
     cmd: 'scoop export -c > scoop-lock.json'
+  import:
+    desc: 'Export installed scoop packages'
+    cmd: 'scoop import scoop-lock.json'
