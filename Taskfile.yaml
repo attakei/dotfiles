@@ -24,6 +24,7 @@ tasks:
     cmds:
       - 'git pull'
       - task: 'aqua:link'
+      - task: 'scoop:import'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
       - 'nu scripts/sync-bun-tools.nu'
