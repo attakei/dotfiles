@@ -5,7 +5,7 @@ includes:
     taskfile: './app/aqua/Taskfile.yaml'
     dir: './app/aqua'
   scoop:
-    taskfile: './app/scoop/Taskfile.yaml'
+    taskfile: './app/Scoop/Taskfile.yaml'
     dir: './app/scoop'
   docs:
     taskfile: 'https://github.com/attakei/workspace-configs.git//projects/sphinx-doc/Taskfile.yaml?tag=v0.6.0'
