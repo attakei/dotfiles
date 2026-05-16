@@ -53,3 +53,4 @@ packages:
 - name: evilmartians/lefthook@v2.1.6
 - name: zellij-org/zellij@v0.44.2
 - name: anthropics/claude-code@v2.1.138
+- name: jqlang/jq@jq-1.8.1
