@@ -14,6 +14,10 @@ SOURCE_URL = "https://github.com/github/gitignore"
 REPO_PATH = Path.home() / "ghq" / "github.com" / "github" / "gitignore"
 
 
+def normalize_lf(text: str) -> str:
+    return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
 def source_sort_key(source: str) -> tuple[object, ...]:
     """Sort plain names first, then slash-separated groups recursively."""
     if "/" not in source:
@@ -50,7 +54,7 @@ def read_prologue(output: Path) -> str:
     if not output.exists():
         return ""
 
-    content = output.read_text(encoding="utf-8")
+    content = normalize_lf(output.read_text(encoding="utf-8"))
     lines = content.splitlines(keepends=True)
     for index, line in enumerate(lines):
         if line.rstrip("\r\n") == MARKER:
@@ -75,7 +79,7 @@ def resolve_sources(repo_path: Path, sources: list[str]) -> list[tuple[str, str]
         raise SystemExit(1)
 
     return [
-        (source, source_path.read_text(encoding="utf-8").rstrip())
+        (source, normalize_lf(source_path.read_text(encoding="utf-8")).rstrip())
         for source, source_path in resolved
     ]
 
@@ -131,7 +135,11 @@ def main() -> int:
     prologue = read_prologue(output)
 
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(render(prologue, sources, source_contents), encoding="utf-8")
+    output.write_text(
+        render(prologue, sources, source_contents),
+        encoding="utf-8",
+        newline="\n",
+    )
     return 0
 
 
