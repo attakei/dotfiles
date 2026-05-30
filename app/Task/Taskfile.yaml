@@ -12,6 +12,13 @@ vars:
   BASE_DIR: '~/ghq/github.com/attakei/dotfiles'
 
 tasks:
+  gitignore:
+    cmds:
+      - task: 'gitignore:generate'
+  gitignore:generate:
+    desc: 'Generate local .gitignore file.'
+    dir: '{{.USER_WORKING_DIR}}'
+    cmd: 'uv run {{.BASE_DIR}}/scripts/gitignore/generate.py .gitignore {{.CLI_ARGS}}'
   copy:items:
     desc: 'Simple display list of static files on dotfiles.'
     cmd: 'ls -al {{.BASE_DIR}}/files'
