@@ -25,6 +25,7 @@ tasks:
       - 'git pull'
       - task: 'aqua:link'
       - task: 'scoop:import'
+        if: '{{eq .GOOS "windows"}}'
       - 'nu scripts/setup.nu'
       - 'nu scripts/sync-uv-tools.nu'
       - 'nu scripts/sync-bun-tools.nu'
