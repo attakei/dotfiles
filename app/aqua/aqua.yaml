@@ -9,7 +9,7 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.510.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.536.1 # renovate: depName=aquaproj/aqua-registry
 - name: local/copilot-cli
   type: local
   path: registry/copilot-cli.yaml
@@ -24,33 +24,33 @@ registries:
   path: registry.yaml
 packages:
 - name: x-motemen/ghq@v1.10.1
-- name: junegunn/fzf@v0.72.0
-- name: astral-sh/uv@0.11.12
+- name: junegunn/fzf@v0.74.0
+- name: astral-sh/uv@0.11.28
 - name: volta-cli/volta@v2.0.2
-- name: denoland/deno@v2.7.14
-- name: jesseduffield/lazygit@v0.61.1
+- name: denoland/deno@v2.9.2
+- name: jesseduffield/lazygit@v0.63.0
 - name: attakei/age@v0.10.2
   registry: attakei/age
 - name: rossmacarthur/sheldon@0.8.5
-- name: starship/starship@v1.25.1
-- name: JanDeDobbeleer/oh-my-posh@v29.13.1
-- name: cli/cli@v2.92.0
-- name: tree-sitter/tree-sitter@v0.26.8
-- name: nushell/nushell@0.112.2
-- name: go-task/task@v3.50.0
+- name: starship/starship@v1.26.0
+- name: JanDeDobbeleer/oh-my-posh@v29.26.1
+- name: cli/cli@v2.96.0
+- name: tree-sitter/tree-sitter@v0.26.10
+- name: nushell/nushell@0.114.1
+- name: go-task/task@v3.52.0
 - name: gitui-org/gitui@v0.28.1
-- name: neovim/neovim@v0.12.2
-- name: oven-sh/bun@bun-v1.3.13
+- name: neovim/neovim@v0.12.4
+- name: oven-sh/bun@bun-v1.3.14
 - name: ziglang/zig@0.15.2
 - name: attakei/gigi@v0.2.1
   registry: local/gigi
 - name: BurntSushi/ripgrep@15.1.0
 - name: sharkdp/fd@v10.4.2
-- name: github/copilot-cli@v1.0.44
+- name: github/copilot-cli@v1.0.70
   registry: local/copilot-cli
-- name: JohnnyMorganz/StyLua@v2.4.1
-- name: Kampfkarren/selene/light@0.30.1
-- name: evilmartians/lefthook@v2.1.6
-- name: zellij-org/zellij@v0.44.2
-- name: anthropics/claude-code@v2.1.138
-- name: jqlang/jq@jq-1.8.1
+- name: JohnnyMorganz/StyLua@v2.5.2
+- name: Kampfkarren/selene/light@0.31.0
+- name: evilmartians/lefthook@v2.1.10
+- name: zellij-org/zellij@v0.44.3
+- name: anthropics/claude-code@v2.1.207
+- name: jqlang/jq@jq-1.8.2
