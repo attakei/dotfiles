@@ -54,3 +54,4 @@ packages:
 - name: zellij-org/zellij@v0.44.3
 - name: anthropics/claude-code@v2.1.207
 - name: jqlang/jq@jq-1.8.2
+- name: openai/codex@rust-v0.143.0
