@@ -55,3 +55,4 @@ packages:
 - name: anthropics/claude-code@v2.1.207
 - name: jqlang/jq@jq-1.8.2
 - name: openai/codex@rust-v0.143.0
+- name: earendil-works/pi@v0.84.4
