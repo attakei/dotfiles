@@ -11,6 +11,7 @@ return {
       if vim.fn.has('win32') == 0 then
         require('nvim-treesitter').install({ 'nu' })
       end
+      require('nvim-treesitter').install({ 'nim' })
     end,
   },
 }
