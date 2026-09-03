@@ -16,6 +16,9 @@ registries:
 - name: local/gigi
   type: local
   path: registry/gigi.yaml
+- name: local/nimlangserver
+  type: local
+  path: registry/nimlangserver.yaml
 - name: attakei/age
   type: github_content
   repo_owner: attakei
@@ -56,3 +59,6 @@ packages:
 - name: jqlang/jq@jq-1.8.2
 - name: openai/codex@rust-v0.143.0
 - name: earendil-works/pi@v0.84.4
+- name: nim-lang/langserver@v1.14.0
+  registry: local/nimlangserver
+- name: tree-sitter/tree-sitter@v0.27.0

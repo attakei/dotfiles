@@ -11,6 +11,9 @@ registries:
   - name: local/gigi
     type: local
     path: registry/gigi.yaml
+  - name: local/nimlangserver
+    type: local
+    path: registry/nimlangserver.yaml
   - name: attakei/age
     type: github_content
     repo_owner: attakei
@@ -20,4 +23,5 @@ packages:
   - registry: standard
   - registry: local/copilot-cli
   - registry: local/gigi
+  - registry: local/nimlangserver
   - registry: attakei/age

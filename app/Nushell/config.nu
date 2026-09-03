@@ -6,6 +6,7 @@ use ./app/nvim.nu *
 use ./app/zellij.nu *
 
 const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
+let IS_WINDOWS = (uname | get kernel-name | str contains 'Windows_NT')
 
 # For Windows
 $env.config.shell_integration = {
@@ -34,7 +35,12 @@ $env.config.keybindings = $env.config.keybindings | append [
 
 # Shared environment variables
 $env.EDITOR = 'nvim --clean'
-
+if ('~/.choosenim' | path expand | path exists) {
+  $env.CC = ('~/.choosenim' | path join 'toolchains' 'mingw64' 'bin' 'gcc'| path expand)
+  if ($IS_WINDOWS) {
+    $env.CC = $env.CC + '.exe'
+  }
+}
 
 # bun
 if (uname | get kernel-name | str contains 'Windows_NT') {
