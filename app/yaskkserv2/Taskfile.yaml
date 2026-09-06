@@ -8,3 +8,6 @@ tasks:
     desc: 'Add global application.'
     cmds:
       - 'uv run ./create-dict.py'
+  test-server:
+    desc: 'Run serfer for testing.'
+    cmd: 'yaskkserv2 --google-suggest var/dict.yaskkserv2 {{.CLI_ARGS}}'
