@@ -1,0 +1,4 @@
+[[sources]]
+filepath = "var/dict/SKK-JISYO.L"
+url = "https://skk-dev.github.io/dict/SKK-JISYO.L.gz"
+format = "gzip"
