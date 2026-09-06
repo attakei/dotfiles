@@ -14,6 +14,9 @@ registries:
   - name: local/nimlangserver
     type: local
     path: registry/nimlangserver.yaml
+  - name: local/yaskkserv2
+    type: local
+    path: registry/yaskkserv2.yaml
   - name: attakei/age
     type: github_content
     repo_owner: attakei
@@ -24,4 +27,5 @@ packages:
   - registry: local/copilot-cli
   - registry: local/gigi
   - registry: local/nimlangserver
+  - registry: local/yaskkserv2
   - registry: attakei/age
