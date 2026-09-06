@@ -1,0 +1,10 @@
+# ------
+# Tasks to manage global applications by aqua.
+# ------
+version: '3'
+
+tasks:
+  create-dict:
+    desc: 'Add global application.'
+    cmds:
+      - 'uv run ./create-dict.py'
