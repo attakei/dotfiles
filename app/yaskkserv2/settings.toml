@@ -1,11 +1,14 @@
 [server]
-dict_path = "{root}/var/dict.yaskkserve2"
+name = "yaskkserv2"
 cli_options = [
     "--google-suggest",
 ]
 
+[server.windows]
+taskdef_path = "{root}/var/taskdef.xml"
+
 [dictionary]
-output = "{root}/var/dict.yaskkserve2"
+output = "{root}/var/dict.yaskkserv2"
 cli_options = [
     "--verbose",
 ]

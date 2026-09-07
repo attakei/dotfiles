@@ -26,9 +26,14 @@ class DictionarySettings(BaseModel):
     sources: list[DictionarySourceSettings]
 
 
+class ServerWindowsSettings(BaseModel):
+    taskdef_path: str
+
+
 class ServerSettings(BaseModel):
-    dict_path: str
+    name: str
     cli_options: list[str]
+    windows: ServerWindowsSettings
 
 
 class Settings(BaseModel):

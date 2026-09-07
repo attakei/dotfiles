@@ -13,6 +13,7 @@ from pydantic import BaseModel
 _HERE = Path(__file__).parent
 sys.path.append(str(_HERE))
 
+from _cli import Context
 from _settings import load_settings  # noqa: E402
 
 if TYPE_CHECKING:
@@ -20,13 +21,6 @@ if TYPE_CHECKING:
 
 parser = argparse.ArgumentParser()
 parser.add_argument("settings", type=Path)
-
-
-class Context(BaseModel):
-    root: Path
-
-    def str_format(self, text: str) -> str:
-        return text.format(**self.model_dump())
 
 
 def fetch_all_dictionaries(settings: DictionarySettings, ctx: Context):
