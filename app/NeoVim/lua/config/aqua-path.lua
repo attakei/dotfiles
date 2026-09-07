@@ -5,6 +5,7 @@ local tools = {
   'tree-sitter',
   'nu',
   'uv',
+  'deno',
 }
 
 local sep = vim.fn.has('win32') == 1 and '\\' or '/'
