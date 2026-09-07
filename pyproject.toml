@@ -9,6 +9,8 @@ dependencies = []
 [dependency-groups]
 dev = [
   "esbonio>=0.16.5",
+  "pyrefly>=1.2.0",
+  "ruff>=0.16.6",
   "sphinx-autobuild>=2025.8.25",
   { include-group = "doc" },
 ]

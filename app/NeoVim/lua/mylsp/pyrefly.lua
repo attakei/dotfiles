@@ -1,11 +1,10 @@
 return {
   mason = false,
-  filetypes = { 'rst' },
+  filetypes = { 'python' },
   cmd = function(dispatchers, config)
     local uv_bin = vim.fn.trim(vim.fn.system('aqua which uv'))
     return vim.lsp.rpc.start(
-      { uv_bin, 'run', 'esbonio' },
-      -- { 'uv', 'run', 'esbonio' },
+      { uv_bin, 'run', 'pyrefly', 'lsp' },
       dispatchers,
       { cwd = config.root_dir }
     )
