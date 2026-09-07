@@ -4,10 +4,10 @@
 version: '3'
 
 tasks:
-  create-dict:
+  create-dictionary:
     desc: 'Add global application.'
     cmds:
-      - 'uv run ./create-dict.py'
+      - 'uv run ./scripts/create-dictionary.py ./settings.toml'
   test-server:
     desc: 'Run serfer for testing.'
     cmd: 'yaskkserv2 --google-suggest var/dict.yaskkserv2 {{.CLI_ARGS}}'

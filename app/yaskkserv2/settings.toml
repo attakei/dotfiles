@@ -1,4 +1,16 @@
-[[sources]]
-filepath = "var/dict/SKK-JISYO.L"
+[server]
+dict_path = "{root}/var/dict.yaskkserve2"
+cli_options = [
+    "--google-suggest",
+]
+
+[dictionary]
+output = "{root}/var/dict.yaskkserve2"
+cli_options = [
+    "--verbose",
+]
+
+[[dictionary.sources]]
+filepath = "{root}/var/dict/SKK-JISYO.L"
 url = "https://skk-dev.github.io/dict/SKK-JISYO.L.gz"
-format = "gzip"
+options = { filetype = "gzip" }
