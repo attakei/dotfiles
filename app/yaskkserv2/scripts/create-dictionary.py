@@ -8,7 +8,6 @@ from subprocess import run
 from typing import TYPE_CHECKING
 
 import requests
-from pydantic import BaseModel
 
 _HERE = Path(__file__).parent
 sys.path.append(str(_HERE))
