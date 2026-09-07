@@ -1,0 +1,33 @@
+# ------
+# Tasks to manage global applications by aqua.
+# ------
+version: '3'
+
+tasks:
+  create-dictionary:
+    desc: 'Add global application.'
+    cmds:
+      - 'uv run ./scripts/create-dictionary.py ./settings.toml'
+  test-server:
+    desc: 'Run serfer for testing.'
+    cmd: 'yaskkserv2 --google-suggest var/dict.yaskkserv2 {{.CLI_ARGS}}'
+  create-service-windows:
+    cmds:
+      - 'uv run ./scripts/manage-for-windows.py create ./settings.toml'
+  delete-service-windows:
+    cmds:
+      - task: 'stop-service-windows'
+      - 'uv run ./scripts/manage-for-windows.py delete ./settings.toml'
+  start-service-windows:
+    cmds:
+      - 'uv run ./scripts/manage-for-windows.py start ./settings.toml'
+  stop-service-windows:
+    cmds:
+      - 'uv run ./scripts/manage-for-windows.py stop ./settings.toml'
+  reload-service-windows:
+    desc: 'reload process to use updated dictionary.'
+    cmds:
+      - task: 'stop-service-windows'
+      - task: 'delete-service-windows'
+      - task: 'create-service-windows'
+      - task: 'start-service-windows'

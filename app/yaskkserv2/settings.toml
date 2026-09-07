@@ -1,0 +1,19 @@
+[server]
+name = "yaskkserv2"
+cli_options = [
+    "--google-suggest",
+]
+
+[server.windows]
+taskdef_path = "{root}/var/taskdef.xml"
+
+[dictionary]
+filepath = "{root}/var/dict.yaskkserv2"
+cli_options = [
+    "--verbose",
+]
+
+[[dictionary.sources]]
+filepath = "{root}/var/dict/SKK-JISYO.L"
+url = "https://skk-dev.github.io/dict/SKK-JISYO.L.gz"
+options = { filetype = "gzip" }
