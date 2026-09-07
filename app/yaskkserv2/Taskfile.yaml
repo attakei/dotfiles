@@ -13,19 +13,21 @@ tasks:
     cmd: 'yaskkserv2 --google-suggest var/dict.yaskkserv2 {{.CLI_ARGS}}'
   create-service-windows:
     cmds:
-      - 'uv run ./scripts/manage-service.py create ./settings.toml --target=windows'
+      - 'uv run ./scripts/manage-for-windows.py create ./settings.toml'
+  delete-service-windows:
+    cmds:
+      - task: 'stop-service-windows'
+      - 'uv run ./scripts/manage-for-windows.py delete ./settings.toml'
   start-service-windows:
     cmds:
-      - 'uv run ./scripts/manage-service.py start ./settings.toml --target=windows'
+      - 'uv run ./scripts/manage-for-windows.py start ./settings.toml'
   stop-service-windows:
     cmds:
-      - 'uv run ./scripts/manage-service.py stop ./settings.toml --target=windows'
+      - 'uv run ./scripts/manage-for-windows.py stop ./settings.toml'
   reload-service-windows:
     desc: 'reload process to use updated dictionary.'
     cmds:
       - task: 'stop-service-windows'
+      - task: 'delete-service-windows'
+      - task: 'create-service-windows'
       - task: 'start-service-windows'
-  delete-service-windows:
-    cmds:
-      - task: 'stop-service-windows'
-      - 'uv run ./scripts/manage-service.py delete ./settings.toml --target=windows'
