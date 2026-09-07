@@ -8,7 +8,7 @@ cli_options = [
 taskdef_path = "{root}/var/taskdef.xml"
 
 [dictionary]
-output = "{root}/var/dict.yaskkserv2"
+filepath = "{root}/var/dict.yaskkserv2"
 cli_options = [
     "--verbose",
 ]

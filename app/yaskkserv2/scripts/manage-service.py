@@ -92,7 +92,7 @@ def main(args: argparse.Namespace):
     context = Context(
         root=settings_toml.parent,
     )
-    dictionary_path = context.make_path(settings.dictionary.output)
+    dictionary_path = context.make_path(settings.dictionary.filepath)
     match args.command, args.target:
         case "create", "windows":
             create_windows_task(settings.server, dictionary_path, context)

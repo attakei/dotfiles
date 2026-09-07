@@ -21,7 +21,7 @@ class DictionarySourceSettings(BaseModel):
 
 
 class DictionarySettings(BaseModel):
-    output: str
+    filepath: str
     cli_options: list[str]
     sources: list[DictionarySourceSettings]
 

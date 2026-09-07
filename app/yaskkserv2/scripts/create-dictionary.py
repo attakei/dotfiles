@@ -36,7 +36,7 @@ def fetch_all_dictionaries(settings: DictionarySettings, ctx: Context):
 
 
 def make_dictionary(settings: DictionarySettings, ctx: Context):
-    output_path = Path(ctx.str_format(settings.output))
+    output_path = Path(ctx.str_format(settings.filepath))
     cmd = [
         "yaskkserv2_make_dictionary",
         f"--dictionary-filename={output_path}",
