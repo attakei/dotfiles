@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import getpass
+import os
 import sys
 from pathlib import Path
 from subprocess import PIPE, run
@@ -21,13 +22,31 @@ TEMPLATE_TASKDEF = """
       <UserId>{username}</UserId>
     </LogonTrigger>
   </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <UserId>{username}</UserId>
+      <LogonType>InteractiveToken</LogonType>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+  </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>{command}</Command>
-      <Arguments>{arguments}</Arguments>
+      <Command>{wscript}</Command>
+      <Arguments>"{launcher}"</Arguments>
     </Exec>
   </Actions>
 </Task>
+""".strip()
+
+# Runs the real command with a hidden window (0 = SW_HIDE) so no console flashes
+# up under a LogonTrigger/InteractiveToken task, which needs no special logon
+# rights (unlike Password/S4U, which require "Log on as a batch job").
+TEMPLATE_LAUNCHER_VBS = """
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "{command_line}", 0, False
 """.strip()
 
 parser = argparse.ArgumentParser()
@@ -49,14 +68,21 @@ class Task(BaseModel):
 
     def create(self, dictionary_path: Path):
         xml_path = self.ctx.make_path(self.settings.windows.taskdef_path)
+        launcher_path = xml_path.with_name("run-hidden.vbs")
         username = getpass.getuser()
         command = run("aqua which yaskkserv2", stdout=PIPE).stdout.strip().decode(encoding="utf8")
         arguments = " ".join(self.settings.cli_options) + f" {dictionary_path}"
-        xml_path.write_text(TEMPLATE_TASKDEF.format(username=username, command=command, arguments=arguments), encoding="utf-16")
-        self._schtasks("/create", ["/np", "/xml", str(xml_path)], sudo=True)
+        command_line = f'"{command}" {arguments}'.replace('"', '""')
+        launcher_path.write_text(TEMPLATE_LAUNCHER_VBS.format(command_line=command_line), encoding="utf-8")
+        wscript = str(Path(os.environ["WINDIR"]) / "System32" / "wscript.exe")
+        xml_path.write_text(
+            TEMPLATE_TASKDEF.format(username=username, wscript=wscript, launcher=launcher_path),
+            encoding="utf-16",
+        )
+        self._schtasks("/create", ["/xml", str(xml_path)])
 
     def delete(self):
-        self._schtasks("/delete", sudo=True)
+        self._schtasks("/delete", ["/f"])
 
     def start(self):
         self._schtasks("/run")
