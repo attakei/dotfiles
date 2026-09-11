@@ -8,6 +8,8 @@ use ./app/zellij.nu *
 const DOTFILES_ROOT = path self | path expand | path join ..... | path expand
 let IS_WINDOWS = (uname | get kernel-name | str contains 'Windows_NT')
 
+mut _paths = []
+
 # For Windows
 $env.config.shell_integration = {
     osc2: false
@@ -51,3 +53,9 @@ if (uname | get kernel-name | str contains 'Windows_NT') {
 } else {
   # TODO: Path settings for Linux
 }
+
+# Path settings
+$_paths = $_paths | append '~/.local/bin'
+$_paths = $_paths | append '~/.nimble/bin'
+$_paths = $_paths | each {|p| $p | path expand } | where {|p| $p | path exists } | where {|p| not ($p in $env.PATH)}
+$env.PATH = $_paths ++ $env.PATH
