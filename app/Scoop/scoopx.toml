@@ -1,0 +1,26 @@
+[sxoop]
+apps = [
+    "7zip",
+    "aqua@>=2.57",
+    "aria2",
+    "gh@~2",
+    "git@~2",
+    "noctty/noctty",
+    "extras/winmerge",
+    "extras/winscp",
+]
+
+[scoop.config]
+"aria2-warning-enabled" = false
+
+[scoop.buckets.main]
+source = "https://github.com/ScoopInstaller/Main.git"
+
+[scoop.buckets.extras]
+source = "https://github.com/ScoopInstaller/Extras"
+
+[scoop.buckets."nerd-fonts"]
+source = "https://github.com/matthewjberger/scoop-nerd-fonts"
+
+[scoop.buckets.noctty]
+source = "https://github.com/amanthanvi/scoop-noctty"
