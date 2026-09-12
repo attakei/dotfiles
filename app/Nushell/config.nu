@@ -38,9 +38,8 @@ $env.config.keybindings = $env.config.keybindings | append [
 # Shared environment variables
 $env.EDITOR = 'nvim --clean'
 if ('~/.choosenim' | path expand | path exists) {
-  $env.CC = ('~/.choosenim' | path join 'toolchains' 'mingw64' 'bin' 'gcc'| path expand)
   if ($IS_WINDOWS) {
-    $env.CC = $env.CC + '.exe'
+    $env.CC = ('~/.choosenim' | path join 'toolchains' 'mingw64' 'bin' 'gcc.exe'| path expand)
   }
 }
 
