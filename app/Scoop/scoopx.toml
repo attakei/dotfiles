@@ -1,4 +1,4 @@
-[sxoop]
+[scoop]
 apps = [
     "7zip",
     "aqua@>=2.57",
