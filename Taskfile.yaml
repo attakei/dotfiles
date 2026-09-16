@@ -8,8 +8,8 @@ includes:
     taskfile: './app/Scoop/Taskfile.yaml'
     dir: './app/scoop'
   skk:
-    taskfile: './app/yaskkserv2/Taskfile.yaml'
-    dir: './app/yaskkserv2'
+    taskfile: './app/atskkserv/Taskfile.yaml'
+    dir: './app/atskkserv'
   docs:
     taskfile: 'https://github.com/attakei/workspace-configs.git//projects/sphinx-doc/Taskfile.yaml?tag=v0.6.0'
     vars:
