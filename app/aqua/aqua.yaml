@@ -19,9 +19,6 @@ registries:
 - name: local/nimlangserver
   type: local
   path: registry/nimlangserver.yaml
-- name: local/yaskkserv2
-  type: local
-  path: registry/yaskkserv2.yaml
 - name: attakei/age
   type: github_content
   repo_owner: attakei
@@ -71,7 +68,5 @@ packages:
 - name: nim-lang/langserver@v1.14.0
   registry: local/nimlangserver
 - name: tree-sitter/tree-sitter@v0.27.0
-- name: wachikun/yaskkserv2@0.1.7
-  registry: local/yaskkserv2
 - name: attakei-lab/atskkserv@v0.1.0
   registry: attakei-lab/atskkserv

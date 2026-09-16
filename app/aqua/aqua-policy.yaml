@@ -14,9 +14,6 @@ registries:
   - name: local/nimlangserver
     type: local
     path: registry/nimlangserver.yaml
-  - name: local/yaskkserv2
-    type: local
-    path: registry/yaskkserv2.yaml
   - name: attakei/age
     type: github_content
     repo_owner: attakei
