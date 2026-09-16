@@ -12,13 +12,14 @@
 
 ## 基盤関連
 
-これらの本体は、OSと密結合したパッケージマネージャーで管理すること（Pacman, winget など）。
+これらの本体は、OSと密結合したパッケージマネージャーで管理すること（Pacman, Scoop など）。
 
 * ターミナルエミュレーターに [WezTerm](https://wezfurlong.org/wezterm/) を使用する。
 * そのうえで動作するシェルに [Nushell](https://www.nushell.sh/) v0.101.0以上 を使用する。
-* ツール系のパッケージ管理に [mise](https://mise.jdx.dev/) を使用する。
-* mise経由で原則として下記のプログラミング言語、ツールチェインを標準セットアップする。
-  * Python
+* ツール系のパッケージ管理に [aqua](https://aquaproj.github.io/) を使用する。
+* aquq経由で原則として下記のプログラミング言語、ツールチェインを標準セットアップする。
+  * Python (標準言語)
+  * Nim (速度を優先するケース)
 
 ### OS固有項目
 
@@ -26,15 +27,14 @@
 
 ### 環境変数関連
 
-- `MISE_ENV`: [mise](./root/.config/mise)のファイル一覧を参照し、該当する環境をカンマ区切りで設定すること。
-  - 例: Linuxの通常環境は、`MISE_ENV=linux`
-
 ## CLIツール関連
 
 インストールの優先順位は下記の通り。
 
-* miseの本体や公開コミュニティ
-* miseの野良プラグイン
-* miseのローカルプラグイン（本リポジトリ内で管理が目標。適宜切り離す）
-* 言語ツールチェイン経由（carg, uv）
+* aqua
+  * aqua-registry内でインストールが可能なものはこれを第一優先にする。
+  * GitHub Releases上で実行ファイルとして公開されているなら、custom registryを自作する。
+  * 場合によっては、CLI自体の自作もする。
+* 言語ツールチェイン経由（▼主にuvやnpm依存のもの）
+  * Nim(nimble)やRust(cargo)関連は、aqua側に寄せられるので基本的にはそちらで。
 * OS系のパッケージレジストリ
