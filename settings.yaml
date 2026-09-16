@@ -15,6 +15,10 @@ links:
       Windows_NT: '{{USERPROFILE}}\.config\wezterm'
       Linux: '{{HOME}}/.config/wezterm'
       Darwin: '{{HOME}}/.config/wezterm'
+  # Noctty (windows only)
+  - source: 'app/Noctty'
+    targets:
+      Windows_NT: '{{USERPROFILE}}\AppData\Local\noctty'
   # uv
   - source: 'app/uv'
     targets:
