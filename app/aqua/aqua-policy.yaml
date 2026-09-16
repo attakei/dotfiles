@@ -29,6 +29,5 @@ packages:
   - registry: local/copilot-cli
   - registry: local/gigi
   - registry: local/nimlangserver
-  - registry: local/yaskkserv2
   - registry: attakei/age
   - registry: attakei-lab/atskkserv
