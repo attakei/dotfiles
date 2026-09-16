@@ -70,8 +70,8 @@ class Task(BaseModel):
         xml_path = self.ctx.make_path(self.settings.windows.taskdef_path)
         launcher_path = xml_path.with_name("run-hidden.vbs")
         username = getpass.getuser()
-        command = run("aqua which yaskkserv2", stdout=PIPE).stdout.strip().decode(encoding="utf8")
-        arguments = " ".join(self.settings.cli_options) + f" {dictionary_path}"
+        command = run("aqua which atskkserv", stdout=PIPE).stdout.strip().decode(encoding="utf8")
+        arguments = " ".join([self.ctx.str_format(o) for o in self.settings.cli_options])
         command_line = f'"{command}" {arguments}'.replace('"', '""')
         launcher_path.write_text(TEMPLATE_LAUNCHER_VBS.format(command_line=command_line), encoding="utf-8")
         wscript = str(Path(os.environ["WINDIR"]) / "System32" / "wscript.exe")
@@ -95,7 +95,7 @@ def main(args: argparse.Namespace):
     settings_toml = Path(args.settings)
     settings = load_settings(settings_toml)
     context = Context(
-        root=settings_toml.parent,
+        root=settings_toml.parent.resolve(),
     )
     task = Task(settings=settings.server, ctx=context)
     match args.command:

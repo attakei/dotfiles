@@ -1,16 +1,16 @@
 [server]
-name = "yaskkserv2"
+name = "atskkserv"
 cli_options = [
-    "--google-suggest",
+    "serve",
+    "{root}/var/SKK-JISYO.utf-8",
 ]
 
 [server.windows]
 taskdef_path = "{root}/var/taskdef.xml"
 
 [dictionary]
-filepath = "{root}/var/dict.yaskkserv2"
+filepath = "{root}/var/SKK-JISYO.utf-8"
 cli_options = [
-    "--verbose",
 ]
 
 [[dictionary.sources]]

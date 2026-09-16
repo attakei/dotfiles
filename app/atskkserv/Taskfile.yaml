@@ -8,9 +8,6 @@ tasks:
     desc: 'Add global application.'
     cmds:
       - 'uv run ./scripts/create-dictionary.py ./settings.toml'
-  test-server:
-    desc: 'Run serfer for testing.'
-    cmd: 'yaskkserv2 --google-suggest var/dict.yaskkserv2 {{.CLI_ARGS}}'
   create-service-windows:
     cmds:
       - 'uv run ./scripts/manage-for-windows.py create ./settings.toml'

@@ -20,5 +20,5 @@ doc = [
 
 [tool.uv.workspace]
 members = [
-    "app/yaskkserv2",
+    "app/atskkserv",
 ]
