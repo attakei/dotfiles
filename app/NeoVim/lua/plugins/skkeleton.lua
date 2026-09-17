@@ -11,22 +11,21 @@ return {
   -- 起動直後に skkeleton をロードしておき、キーマップは config 内で張る。
   event = 'VeryLazy',
   config = function()
-    -- yaskkserv2 (SKK server) への接続先ホストを解決する。
+    -- SKK server への接続先ホストを解決する。
     --   * ネイティブ環境 (Windows / macOS): 127.0.0.1
-    --   * WSL 上の NeoVim: Windows ホスト側で動く yaskkserv2 に接続するため、
-    --     WSL2 (NAT) では既定ゲートウェイ = Windows ホスト IP を
-    --     /etc/resolv.conf の nameserver から取得して使う。
-    -- NOTE: WSL2 のミラーモード、または yaskkserv2 を WSL 内で起動する構成では
-    --       常に 127.0.0.1 でよい。その場合は下の WSL 分岐を無効化すること。
+    --   * WSL 上の NeoVim (NAT モード): Windows ホスト側で動く SKK server に
+    --     接続するため、`ip route` のデフォルトゲートウェイ (= Windows ホスト IP)
+    --     を使う。/etc/resolv.conf の nameserver は Tailscale 等に書き換えられ
+    --     ホスト IP と一致しないことがあるため参照しない。
+    --   * WSL2 のミラーモード、または SKK server を WSL 内で起動する構成では
+    --     常に 127.0.0.1 でよい (その場合は下の WSL 分岐を無効化する)。
     local function skk_server_host()
       if vim.fn.has('wsl') == 1 then
-        local ok, lines = pcall(vim.fn.readfile, '/etc/resolv.conf')
+        local ok, output = pcall(vim.fn.system, { 'ip', 'route', 'show', 'default' })
         if ok then
-          for _, line in ipairs(lines) do
-            local ip = line:match('^nameserver%s+([0-9.]+)')
-            if ip then
-              return ip
-            end
+          local ip = output:match('via%s+(%d+%.%d+%.%d+%.%d+)')
+          if ip then
+            return ip
           end
         end
       end
