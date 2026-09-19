@@ -19,7 +19,13 @@ return {
     --     ホスト IP と一致しないことがあるため参照しない。
     --   * WSL2 のミラーモード、または SKK server を WSL 内で起動する構成では
     --     常に 127.0.0.1 でよい (その場合は下の WSL 分岐を無効化する)。
+    -- デバッグ用: 環境変数 SKK_LOCALHOST が設定されている場合は上記を無視し、
+    -- WSL 内で起動した SKK server の検証用に強制的に 127.0.0.1 へ接続する。
+    --   例: SKK_LOCALHOST=1 nvim
     local function skk_server_host()
+      if vim.env.SKK_LOCALHOST then
+        return '127.0.0.1'
+      end
       if vim.fn.has('wsl') == 1 then
         local ok, output = pcall(vim.fn.system, { 'ip', 'route', 'show', 'default' })
         if ok then
