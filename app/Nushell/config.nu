@@ -36,7 +36,8 @@ $env.config.keybindings = $env.config.keybindings | append [
 ]
 
 # Shared environment variables
-$env.EDITOR = 'nvim --clean'
+# skkeleton だけを有効にした専用 NeoVim 設定 (app/NeoVim/SKK) を使う。
+$env.EDITOR = 'env NVIM_APPNAME=nvim/SKK nvim'
 if ('~/.choosenim' | path expand | path exists) {
   if ($IS_WINDOWS) {
     $env.CC = ('~/.choosenim' | path join 'toolchains' 'mingw64' 'bin' 'gcc.exe'| path expand)
