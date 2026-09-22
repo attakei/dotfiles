@@ -5,15 +5,17 @@
 registries:
   - type: standard
     ref: semver(">= 3.0.0")
+  - name: nimble-tools
+    type: github_content
+    repo_owner: attakei
+    repo_name: nimble-tools
+    path: registry.yaml
   - name: local/copilot-cli
     type: local
     path: registry/copilot-cli.yaml
   - name: local/gigi
     type: local
     path: registry/gigi.yaml
-  - name: local/nimlangserver
-    type: local
-    path: registry/nimlangserver.yaml
   - name: attakei/age
     type: github_content
     repo_owner: attakei
@@ -26,8 +28,8 @@ registries:
     path: aqua/registry.yaml
 packages:
   - registry: standard
+  - registry: nimble-tools
   - registry: local/copilot-cli
   - registry: local/gigi
-  - registry: local/nimlangserver
   - registry: attakei/age
   - registry: attakei-lab/atskkserv

@@ -10,15 +10,18 @@
 registries:
 - type: standard
   ref: v4.563.0 # renovate: depName=aquaproj/aqua-registry
+- name: nimble-tools
+  type: github_content
+  repo_owner: attakei
+  repo_name: nimble-tools
+  ref: v0.0.20260921
+  path: registry.yaml
 - name: local/copilot-cli
   type: local
   path: registry/copilot-cli.yaml
 - name: local/gigi
   type: local
   path: registry/gigi.yaml
-- name: local/nimlangserver
-  type: local
-  path: registry/nimlangserver.yaml
 - name: attakei/age
   type: github_content
   repo_owner: attakei
@@ -66,7 +69,7 @@ packages:
 - name: openai/codex@rust-v0.154.0
 - name: earendil-works/pi@v0.85.1
 - name: nim-lang/langserver@v1.14.0
-  registry: local/nimlangserver
+  registry: nimble-tools
 - name: tree-sitter/tree-sitter@v0.27.0
 - name: attakei-lab/atskkserv@v0.1.0
   registry: attakei-lab/atskkserv
