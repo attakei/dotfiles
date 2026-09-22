@@ -1,14 +1,17 @@
 keybinds {
+    // Claudeなどにおいて、EDITORを使用するモードに切り替えるバインディングと重複
     locked {
         unbind "Ctrl g"
         unbind "Ctrl q"
         bind "Ctrl x" { SwitchToMode "Normal"; }
     }
+    // Claudeなどにおいて、EDITORを使用するモードに切り替えるバインディングと重複
     normal {
         unbind "Ctrl g"
         unbind "Ctrl q"
         bind "Ctrl x" { SwitchToMode "Locked"; }
     }
+    // いきなりセッションを破棄されないための措置
     session {
         bind "q" { Quit; }
     }
