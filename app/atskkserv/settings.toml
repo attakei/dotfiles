@@ -2,6 +2,7 @@
 name = "atskkserv"
 cli_options = [
     "serve",
+    "--server-host=0.0.0.0",
     "{root}/var/SKK-JISYO.utf-8",
 ]
 
