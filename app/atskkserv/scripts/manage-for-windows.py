@@ -31,6 +31,7 @@ TEMPLATE_TASKDEF = """
   <Settings>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
   </Settings>
   <Actions Context="Author">
     <Exec>
@@ -44,9 +45,14 @@ TEMPLATE_TASKDEF = """
 # Runs the real command with a hidden window (0 = SW_HIDE) so no console flashes
 # up under a LogonTrigger/InteractiveToken task, which needs no special logon
 # rights (unlike Password/S4U, which require "Log on as a batch job").
+#
+# bWaitOnReturn=True keeps wscript alive for the server's whole lifetime, so the
+# task stays "Running" and `schtasks /end` can terminate wscript together with
+# atskkserv (same job object). With False, wscript exits immediately, the task
+# returns to "Ready", and atskkserv is orphaned so /end has nothing to stop.
 TEMPLATE_LAUNCHER_VBS = """
 Set objShell = CreateObject("WScript.Shell")
-objShell.Run "{command_line}", 0, False
+objShell.Run "{command_line}", 0, True
 """.strip()
 
 parser = argparse.ArgumentParser()
@@ -66,11 +72,14 @@ class Task(BaseModel):
             cmd = ["sudo"] + cmd
         run(cmd)
 
+    def _server_command(self) -> str:
+        return run("aqua which atskkserv", stdout=PIPE).stdout.strip().decode(encoding="utf8")
+
     def create(self, dictionary_path: Path):
         xml_path = self.ctx.make_path(self.settings.windows.taskdef_path)
         launcher_path = xml_path.with_name("run-hidden.vbs")
         username = getpass.getuser()
-        command = run("aqua which atskkserv", stdout=PIPE).stdout.strip().decode(encoding="utf8")
+        command = self._server_command()
         arguments = " ".join([self.ctx.str_format(o) for o in self.settings.cli_options])
         command_line = f'"{command}" {arguments}'.replace('"', '""')
         launcher_path.write_text(TEMPLATE_LAUNCHER_VBS.format(command_line=command_line), encoding="utf-8")
@@ -89,6 +98,10 @@ class Task(BaseModel):
 
     def stop(self):
         self._schtasks("/end")
+        # `schtasks /end` only terminates the wscript launcher; the real server
+        # survives as an orphan, so kill it (and any children) by image name.
+        image = Path(self._server_command()).name
+        run(["taskkill", "/f", "/t", "/im", image])
 
 
 def main(args: argparse.Namespace):
