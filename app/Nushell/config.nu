@@ -37,7 +37,18 @@ $env.config.keybindings = $env.config.keybindings | append [
 
 # Shared environment variables
 # skkeleton だけを有効にした専用 NeoVim 設定 (app/NeoVim/SKK) を使う。
-$env.EDITOR = 'env NVIM_APPNAME=nvim/SKK nvim'
+# Windows ネイティブには POSIX `env` が PATH 上に無い (Git の usr\bin は
+# PATH 外) ため、`env` に頼らず `nvim -u` で SKK プロファイルの init.lua を
+# 直接指定する。WSL/Linux では既存どおり `env NVIM_APPNAME=...` を使う。
+if ($IS_WINDOWS) {
+  # フォワードスラッシュにする。バックスラッシュのままだと、EDITOR を
+  # 起動する側のシェル (git 付属の MSYS sh など) でエスケープとして食われ、
+  # nvim が -u のパスを読めず E282 になる。nvim は Windows でも `/` を解釈する。
+  let skk_init = ($env.USERPROFILE | path join 'AppData' 'Local' 'nvim' 'SKK' 'init.lua' | str replace -a '\' '/')
+  $env.EDITOR = $'nvim -u ($skk_init)'
+} else {
+  $env.EDITOR = 'env NVIM_APPNAME=nvim/SKK nvim'
+}
 if ('~/.choosenim' | path expand | path exists) {
   if ($IS_WINDOWS) {
     $env.CC = ('~/.choosenim' | path join 'toolchains' 'mingw64' 'bin' 'gcc.exe'| path expand)
