@@ -29,23 +29,26 @@ dofile(MAIN_CONFIG .. '/lua/config/lazy-bootstrap.lua')
 -- lazy.setup より前に実行する必要がある。
 dofile(MAIN_CONFIG .. '/lua/config/aqua-path.lua')
 
-local opts = {
-  spec = { dofile(MAIN_CONFIG .. '/lua/plugins/skkeleton.lua') },
-  -- Share the main config's lockfile instead of generating a separate one:
-  -- skkeleton/denops.vim are pinned there too, so there is nothing to
-  -- reconcile between the two.
-  lockfile = MAIN_CONFIG .. '/lazy-lock.json',
-}
-
--- Under `nvim -u` (Windows $EDITOR) NVIM_APPNAME is unset, so lazy would
--- default its plugin root to the *main* profile's data dir and could
--- uninstall the main plugins on clean. Pin an isolated root/state in that
--- case. Under NVIM_APPNAME=nvim/SKK (WSL/Linux $EDITOR) the stdpath('data')
--- defaults are already isolated, so leave them untouched.
+-- Keep this profile's lazy state fully isolated from the main profile:
+--   * root/state: under `nvim -u` NVIM_APPNAME is unset, so the stdpath('data')
+--     defaults point at the *main* data dir; lazy could then uninstall the main
+--     plugins on clean. Carve out a dedicated subdir in that case. Under
+--     NVIM_APPNAME=nvim/SKK (WSL/Linux) stdpath('data') is already the isolated
+--     SKK-data dir, so use it as-is.
+--   * lockfile: never share the main config's (git-tracked) lazy-lock.json.
+--     lazy rewrites the lockfile with only the current setup's spec, so an
+--     install/update here would prune the main profile's 20+ pins down to just
+--     skkeleton/denops. Pin a separate lockfile in the isolated data dir. The
+--     trade-off is that skkeleton/denops pins are no longer kept in lock-step
+--     with the main profile, which is acceptable and far safer than clobbering.
+local data = vim.fn.stdpath('data')
 if vim.env.NVIM_APPNAME ~= 'nvim/SKK' then
-  local data = vim.fn.stdpath('data') .. '/SKK'
-  opts.root = data .. '/lazy'
-  opts.state = data .. '/state.json'
+  data = data .. '/SKK'
 end
 
-require('lazy').setup(opts)
+require('lazy').setup({
+  spec = { dofile(MAIN_CONFIG .. '/lua/plugins/skkeleton.lua') },
+  root = data .. '/lazy',
+  state = data .. '/state.json',
+  lockfile = data .. '/lazy-lock.json',
+})
