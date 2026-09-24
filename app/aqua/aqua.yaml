@@ -71,5 +71,5 @@ packages:
 - name: nim-lang/langserver@v1.14.0
   registry: nimble-tools
 - name: tree-sitter/tree-sitter@v0.27.0
-- name: attakei-lab/atskkserv@v0.1.0
+- name: attakei-lab/atskkserv@v0.1.1
   registry: attakei-lab/atskkserv
