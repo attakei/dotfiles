@@ -6,6 +6,9 @@ local tools = {
   'nu',
   'uv',
   'deno',
+  'stylua',
+  'nimlangserver',
+  'lua-language-server',
 }
 
 local sep = vim.fn.has('win32') == 1 and '\\' or '/'

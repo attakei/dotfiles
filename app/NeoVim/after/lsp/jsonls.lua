@@ -8,13 +8,10 @@ return {
     '--stdio',
   },
   filetypes = { 'json', 'jsonc', 'json5' },
-  mason = false,
-  setup = {
-    settings = {
-      json = {
-        schemas = require('schemastore').json.schemas(),
-        validate = { enable = true },
-      },
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
     },
   },
 }

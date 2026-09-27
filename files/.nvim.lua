@@ -1,13 +1,8 @@
 --[[
-Pythonプロジェクト系
-====================
+LSP servers are enabled automatically by app/NeoVim/after/lsp/*.lua.
+Use this only to adjust them per project.
 ]]
--- vim.lsp.enable('ruff')
--- vim.lsp.enable('pyrefly')
-
---[[
-Nodeプロジェクト系
-==================
-]]
--- vim.lsp.enable('deno')
-
+-- vim.g.lsp_servers = {
+--   disable = { 'ty' },
+--   enable = { 'deno' },
+-- }

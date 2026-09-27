@@ -61,6 +61,7 @@ packages:
 - name: github/copilot-cli@v1.0.83
   registry: local/copilot-cli
 - name: JohnnyMorganz/StyLua@v2.5.2
+- name: LuaLS/lua-language-server@3.19.1
 - name: Kampfkarren/selene/light@0.31.0
 - name: evilmartians/lefthook@v2.1.14
 - name: zellij-org/zellij@v0.45.1
