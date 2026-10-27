@@ -65,7 +65,7 @@ packages:
 - name: Kampfkarren/selene/light@0.31.0
 - name: evilmartians/lefthook@v2.1.14
 - name: zellij-org/zellij@v0.45.1
-- name: anthropics/claude-code@v2.1.207
+- name: anthropics/claude-code@v2.1.308
 - name: jqlang/jq@jq-1.8.2
 - name: openai/codex@rust-v0.154.0
 - name: earendil-works/pi@v0.85.1
