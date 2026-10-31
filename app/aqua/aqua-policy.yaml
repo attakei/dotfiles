@@ -21,9 +21,9 @@ registries:
     repo_owner: attakei
     repo_name: age
     path: registry.yaml
-  - name: attakei-lab/atskkserv
+  - name: attakei/atskkserv
     type: github_content
-    repo_owner: attakei-lab
+    repo_owner: attakei
     repo_name: atskkserv
     path: aqua/registry.yaml
 packages:
@@ -32,4 +32,4 @@ packages:
   - registry: local/copilot-cli
   - registry: local/gigi
   - registry: attakei/age
-  - registry: attakei-lab/atskkserv
+  - registry: attakei/atskkserv

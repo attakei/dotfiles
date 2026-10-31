@@ -28,11 +28,11 @@ registries:
   repo_name: age
   ref: v0.12.0
   path: registry.yaml
-- name: attakei-lab/atskkserv
+- name: attakei/atskkserv
   type: github_content
-  repo_owner: attakei-lab
+  repo_owner: attakei
   repo_name: atskkserv
-  ref: dev
+  ref: v0.1.1
   path: aqua/registry.yaml
 packages:
 - name: x-motemen/ghq@v1.10.1
@@ -72,5 +72,5 @@ packages:
 - name: nim-lang/langserver@v1.14.0
   registry: nimble-tools
 - name: tree-sitter/tree-sitter@v0.27.0
-- name: attakei-lab/atskkserv@v0.1.1
-  registry: attakei-lab/atskkserv
+- name: attakei/atskkserv@v0.1.1
+  registry: attakei/atskkserv
