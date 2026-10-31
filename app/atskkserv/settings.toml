@@ -9,6 +9,9 @@ cli_options = [
 [server.windows]
 taskdef_path = "{root}/var/taskdef.xml"
 
+[server.systemd]
+unit_path = "{root}/var/atskkserv.service"
+
 [dictionary]
 filepath = "{root}/var/SKK-JISYO.utf-8"
 cli_options = [

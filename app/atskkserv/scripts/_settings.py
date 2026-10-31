@@ -30,10 +30,15 @@ class ServerWindowsSettings(BaseModel):
     taskdef_path: str
 
 
+class ServerSystemdSettings(BaseModel):
+    unit_path: str
+
+
 class ServerSettings(BaseModel):
     name: str
     cli_options: list[str]
     windows: ServerWindowsSettings
+    systemd: ServerSystemdSettings
 
 
 class Settings(BaseModel):
