@@ -19,3 +19,14 @@ tasks:
       - task: 'service-windows-delete'
       - task: 'service-windows-create'
       - task: 'service-windows-start'
+  service-systemd-*:
+    vars:
+      SUBCOMMAND: '{{index .MATCH 0}}'
+    cmd: 'uv run ./scripts/manage-for-systemd.py {{.SUBCOMMAND}} ./settings.toml'
+  service-systemd-reload:
+    desc: 'reload service to use updated dictionary/binary.'
+    cmds:
+      - task: 'service-systemd-stop'
+      - task: 'service-systemd-delete'
+      - task: 'service-systemd-create'
+      - task: 'service-systemd-start'
