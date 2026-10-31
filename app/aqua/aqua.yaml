@@ -26,7 +26,7 @@ registries:
   type: github_content
   repo_owner: attakei
   repo_name: age
-  ref: v0.10.2
+  ref: v0.12.0
   path: registry.yaml
 - name: attakei-lab/atskkserv
   type: github_content
