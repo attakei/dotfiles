@@ -46,9 +46,80 @@ if vim.env.NVIM_APPNAME ~= 'nvim/SKK' then
   data = data .. '/SKK'
 end
 
+local spec = dofile(MAIN_CONFIG .. '/lua/plugins/skkeleton.lua')
+local lockfile = data .. '/lazy-lock.json'
+
+-- Copy this profile's pins from the main (git-tracked) lockfile into the
+-- isolated one, so `:Lazy restore` here checks out the same commits as the
+-- main profile. Only entries for plugins in this profile's spec are copied;
+-- the main lockfile itself is never written.
+local function sync_pins_from_main()
+  local function read_json(path)
+    local f = io.open(path, 'rb')
+    if not f then
+      return nil
+    end
+    local ok, value = pcall(vim.json.decode, f:read('*a'))
+    f:close()
+    return ok and type(value) == 'table' and value or nil
+  end
+
+  local main_lock = read_json(MAIN_CONFIG .. '/lazy-lock.json')
+  if not main_lock then
+    return
+  end
+
+  -- Plugin names in lazy are the last path component of the spec's source.
+  local names = {}
+  local function collect(s)
+    if type(s) == 'string' then
+      names[#names + 1] = s:match('[^/]+$')
+    elseif type(s) == 'table' then
+      if type(s[1]) == 'string' then
+        names[#names + 1] = s.name or s[1]:match('[^/]+$')
+      end
+      for _, dep in ipairs(s.dependencies or {}) do
+        collect(dep)
+      end
+    end
+  end
+  collect(spec)
+
+  local lock = read_json(lockfile) or {}
+  local changed = false
+  for _, name in ipairs(names) do
+    local pin = main_lock[name]
+    if pin and not vim.deep_equal(lock[name], pin) then
+      lock[name] = pin
+      changed = true
+    end
+  end
+  if not changed then
+    return
+  end
+
+  -- Same layout lazy.nvim writes: sorted, one entry per line.
+  local keys = vim.tbl_keys(lock)
+  table.sort(keys)
+  local lines = {}
+  for _, k in ipairs(keys) do
+    local entry = lock[k]
+    lines[#lines + 1] = ('  %s: { "branch": %s, "commit": %s }'):format(
+      vim.json.encode(k),
+      vim.json.encode(entry.branch),
+      vim.json.encode(entry.commit)
+    )
+  end
+  vim.fn.mkdir(data, 'p')
+  local f = assert(io.open(lockfile, 'wb'))
+  f:write('{\n' .. table.concat(lines, ',\n') .. '\n}\n')
+  f:close()
+end
+sync_pins_from_main()
+
 require('lazy').setup({
-  spec = { dofile(MAIN_CONFIG .. '/lua/plugins/skkeleton.lua') },
+  spec = { spec },
   root = data .. '/lazy',
   state = data .. '/state.json',
-  lockfile = data .. '/lazy-lock.json',
+  lockfile = lockfile,
 })

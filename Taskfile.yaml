@@ -30,6 +30,14 @@ tasks:
       - task: 'scoop:import'
         if: '{{eq .GOOS "windows"}}'
       - 'nu scripts/setup.nu'
+      # Sync Neovim plugins to the commits pinned in lazy-lock.json
+      - |
+        if command -v nvim >/dev/null 2>&1; then
+          nvim --headless '+Lazy! restore' +qa
+          # SKK profile: init.lua copies its pins from the main lockfile first.
+          # `-u` resolves to the same data dir as NVIM_APPNAME=nvim/SKK.
+          nvim --headless -u app/NeoVim/SKK/init.lua '+Lazy! restore' +qa
+        fi
       - 'nu scripts/sync-uv-tools.nu'
       - 'nu scripts/sync-bun-tools.nu'
       - |
