@@ -13,6 +13,9 @@ registries:
   - name: local/copilot-cli
     type: local
     path: registry/copilot-cli.yaml
+  - name: local/nushell/nufmt
+    type: local
+    path: registry/nushell/nufmt.yaml
   - name: local/gigi
     type: local
     path: registry/gigi.yaml
@@ -33,3 +36,4 @@ packages:
   - registry: local/gigi
   - registry: attakei/age
   - registry: attakei/atskkserv
+  - registry: local/nushell/nufmt
