@@ -1,6 +1,9 @@
 pre-commit:
   parallel: true
   jobs:
+    - name: Nushell
+      glob: "*.nu"
+      run: 'nufmt {staged_files}'
     - name: Lua
       glob: "*.lua"
       exclude:
