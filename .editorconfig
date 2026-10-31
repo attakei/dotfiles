@@ -17,11 +17,11 @@ end_of_line = crlf
 charset = sjis
 
 # 2 space indentation
-[*.{yml,yaml,js,jsx,ts,tsx,json,rst,html,css,nim,nims,nimble,nimf,md,nu,lua}]
+[*.{yml,yaml,js,jsx,ts,tsx,json,rst,html,css,nim,nims,nimble,nimf,md,lua}]
 indent_size = 2
 
 # 4 space indentation
-[*.{py,php,toml}]
+[*.{py,php,toml,nu}]
 indent_size = 4
 
 # Tab indentation (no size specified)
