@@ -2,6 +2,8 @@
 ### command with: python
 .bin
 .task
+# Extensions (symlinks to other repositories)
+/extends/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

@@ -26,6 +26,7 @@ tasks:
       - '.env'
     cmds:
       - 'git pull'
+      - task: 'aqua:env'
       - task: 'aqua:link'
       - task: 'scoop:import'
         if: '{{eq .GOOS "windows"}}'

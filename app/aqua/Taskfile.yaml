@@ -13,6 +13,9 @@ tasks:
     cmds:
       - 'aqua generate -i {{.CLI_ARGS}}'
       - task: 'link'
+  env:
+    desc: 'Rebuild and persist AQUA_GLOBAL_CONFIG / AQUA_POLICY_CONFIG.'
+    cmd: 'nu {{.ROOT_DIR}}/scripts/aqua-env.nu'
   link:
     desc: 'Make symlink of applications.'
     cmd: 'aqua install --only-link'
