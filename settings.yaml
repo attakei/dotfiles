@@ -8,7 +8,7 @@ links:
     targets:
       Windows_NT: '{{APPDATA}}\nushell'
       Linux: '{{HOME}}/.config/nushell'
-      Darwin: '{{HOME}}/.config/nushell'
+      Darwin: '{{HOME}}/Library/Application Support/nushell'
   # WezTerm
   - source: 'app/WezTerm'
     targets:
