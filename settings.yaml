@@ -1,6 +1,6 @@
 ---
 # ------
-# Symlink targets of files in `./root`.a
+# Symlink targets of files in `./root`.
 # ------
 links:
   # nushell
